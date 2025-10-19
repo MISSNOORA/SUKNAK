@@ -1,0 +1,196 @@
+	/* ====== GENERAL RESET ====== */
+	* {
+	  margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+	}
+
+	body {
+	  font-family: "Poppins", sans-serif;
+	  background-color: #f9f9f9;
+	  color: #333;
+	}
+
+	/* ====== HEADER ====== */
+	header {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 10px 0;
+	  background-color: #C8D9E6;
+	  color: #111;
+	  position: sticky;    
+	  top: 0;              
+      z-index: 1000;
+	}
+
+	.top-header {
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  gap: 20px;
+	}
+
+	.logo {
+	  width: 60px;
+	  height: 60px;
+	  object-fit: cover;
+	}
+
+	h1 {
+	  font-size: 24px;
+	  font-weight: 600;
+	  letter-spacing: 1px;
+	}
+
+
+	nav {
+	  font-weight: 600;
+	  width: 100%;
+	  background-color: #C8D9E6;
+      padding: 5px 0;
+      border-top: .5px solid #F5EFEB;
+	}
+
+	nav ul {
+	  list-style: none;
+	  display: flex;
+	  justify-content: space-evenly;
+	  width: 100%;
+	  align-items: center;
+	  gap: 40px;
+	  margin: 0;
+	  padding: 0;
+	}
+
+	nav a {
+	  position: relative;
+	  text-decoration: none;
+	  color: #2F4156;
+	  font-size: 16px;
+	  font-weight: 500;
+	  letter-spacing: 0.5px;
+	  padding: 8px 0;
+	  transition: color 0.3s ease;
+	}
+
+	
+	nav a::after {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  width: 0%;
+	  height: 2px;
+	  background-color: #2F4156;
+	  transition: width 0.3s ease;
+	}
+
+	
+	nav a:hover {
+	  color: #fff; 
+	}
+
+	nav a:hover::after {
+	  width: 100%;
+	}
+	
+	nav a.active {
+	  color: #fff;
+	}
+
+	nav a.active::after {
+	  width: 100%; /* Keep underline visible */
+	  background-color: #FFD700; /* Yellow underline */
+}
+
+
+	/* ====== FOOTER ====== */
+	footer {
+	  background-color: #2F4156;
+	  color: #F5EFEB;
+	  padding: 30px 0 15px;
+	  text-align: center;
+	}
+
+	.footer-content {
+	  display: flex;
+	  justify-content: center;
+	  gap: 60px;
+	  margin-bottom: 15px;
+	  flex-wrap: wrap;
+	}
+
+	.footer-item img {
+	  width: 25px;
+	  height: 25px;
+	  vertical-align: middle;
+	}
+
+	.footer-item p {
+	  display: inline-block;
+	  margin-left: 10px;
+	  font-size: 14px;
+	}
+
+	.footer-bottom {
+	  border-top: 1px solid #444;
+	  padding-top: 10px;
+	  font-size: 13px;
+	  color: #F5EFEB;
+	}
+	
+	/* ====== CONTACT BUTTONS ====== */
+	.contact-links {
+	  display: flex;
+	  justify-content: center;
+	  gap: 25px;
+	  margin-top: 25px;
+	  flex-wrap: wrap;
+	}
+
+	.contact-btn {
+	  background: #F5EFEB;
+	  color: #000;
+	  text-decoration: none;
+	  display: flex;
+	  align-items: center;
+	  gap: 10px;
+	  padding: 10px 18px;
+	  border-radius: 12px;
+	  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	  font-weight: 500;
+	  transition: all 0.4s ease;
+	}
+
+	.contact-btn i {
+	  font-size: 18px;
+	  transition: all 0.4s ease;
+	}
+
+	.contact-btn:hover {
+	  color: #fff;
+	  transform: translateY(-3px);
+	  box-shadow: 0 0 20px currentColor; /* soft glowing effect */
+	}
+
+	/* individual colors for hover */
+	.call:hover {
+	  background: #007bff; /* blue for call */
+	  box-shadow: 0 0 25px #007bff;
+	}
+
+	.whatsapp:hover {
+	  background: #25D366; /* WhatsApp green */
+	  box-shadow: 0 0 25px #25D366;
+	}
+
+	.gmail:hover {
+	  background: #EA4335; /* Gmail red */
+	  box-shadow: 0 0 25px #EA4335;
+	}
+
+	.contact-btn span {
+	  font-size: 14px;
+	}
+
