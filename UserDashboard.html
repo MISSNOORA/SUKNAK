@@ -33,8 +33,22 @@
 
 	  <!-- ===== MAIN CONTENT PLACEHOLDER ===== -->
 	  <main>
-	  <div class = user-nav>Home ▸ User</div>
-	  <h1 class = user-main> previous reqests </h1>
+	  <div class = "user-nav">Home ▸ User</div>
+	  <h1 class = 'user-main'> previous reqests </h1>
+	  <table class="user-table">
+	  <thead>
+	   <tr><th>service name</th><th>date</th><th>cost</th><th>status</th></tr>
+	   </thead>
+      <tbody>
+        <tr><td>Cleaning</td><td>12/10/2025</td><td>500$</td><td>pending</td></tr>
+        <tr><td>Plumbing</td><td>10/10/2025</td><td>700$</td><td>provided</td></tr>
+        <tr><td>Moving</td><td>07/10/2025</td><td>1000$</td><td>declined</td></tr>
+      </tbody>
+    </table>
+	<div class="user-buttons">
+			<button class="user-btn request-btn">Request service</button>
+			<button class="user-btn evaluate-btn">Evaluate service</button>
+		</div>
 	  </main>
 
 	  <!-- ===== FOOTER SECTION ===== -->
