@@ -310,5 +310,8 @@
 	  color: #555;
 	  margin-bottom: 15px;
 	}
-
-
+<!-- ===== user page ===== -->
+.user-nav {
+	color:#2F4156; font-size:14px; margin:8px 0 12px}
+.user-main{
+	font-size:32px; margin:12px 0 18px;  color: #2F4156}
