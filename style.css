@@ -1,4 +1,4 @@
-
+/* colors ... Navy(darkBlue) = #2F4156   SkyBlue(LightBlue) = #C8D9E6   Beige = #F5EFEB*/
 	* {
 	  margin: 0;
 	  padding: 0;
@@ -182,26 +182,133 @@
 	.contact-btn:hover {
 	  color: #fff;
 	  transform: translateY(-3px);
-	  box-shadow: 0 0 20px currentColor; /* soft glowing effect */
+	  box-shadow: 0 0 20px currentColor; 
 	}
 
-	/* individual colors for hover */
+
 	.call:hover {
-	  background: #007bff; /* blue for call */
+	  background: #007bff; 
 	  box-shadow: 0 0 25px #007bff;
 	}
 
 	.whatsapp:hover {
-	  background: #25D366; /* WhatsApp green */
+	  background: #25D366;
 	  box-shadow: 0 0 25px #25D366;
 	}
 
 	.gmail:hover {
-	  background: #EA4335; /* Gmail red */
+	  background: #EA4335; 
 	  box-shadow: 0 0 25px #EA4335;
 	}
 
 	.contact-btn span {
 	  font-size: 14px;
 	}
+	
+	
+	/* ===== PROVIDER DASHBOARD ===== */
+	
+	.provider-dashboard {
+	  padding: 40px;
+	  text-align: center;
+	}
+
+	.provider-top-buttons {
+	  display: flex;
+	  justify-content: center;
+	  gap: 300px;
+	  margin-bottom: 40px;
+	}
+
+	.provider-btn {
+	  padding: 10px 25px;
+	  font-size: 16px;
+	  font-weight: 500;
+	  border-radius: 25px;
+	  border: none;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+
+	}
+
+	.add-btn {
+	  background-color: transparent;
+	  color: #2F4156;
+	  border: 2px solid #2F4156;
+	  
+	}
+
+	.add-btn:hover {
+	  background-color: #2F4156;
+	  color: #fff;
+	  transform: scale(1.05);
+	}
+
+	.staff-btn {
+	  background-color: transparent;
+	  color: #2F4156;
+	  border: 2px solid #2F4156;
+	}
+
+	.staff-btn:hover {
+	  background-color: #2F4156;
+	  color: #fff;
+	  transform: scale(1.05);
+	}
+
+	.provider-services-box {
+	  border: 2px solid #2F4156;
+	  background-color: #F5EFEB;
+	  border-radius: 8px;
+	  padding: 40px 20px;
+	  margin: 0 auto;
+	  width: 90%;
+	  max-width: 1000px;
+	}
+
+	.provider-services-box legend {
+	  font-size: 22px;
+	  font-weight: 600;
+	  padding: 0 20px;
+	  color: #2F4156;
+	}
+
+	.provider-service-grid {
+	  display: grid;
+	  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+	  gap: 30px;
+	  margin-top: 30px;
+	}
+
+	.provider-service-card {
+	  border: 1px solid #ccc;
+	  border-radius: 8px;
+	  overflow: hidden;
+	  background-color: #fff;
+	  transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.provider-service-card:hover {
+	  transform: translateY(-5px);
+	  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+	}
+
+	.provider-service-card img {
+	  width: 100%;
+	  height: 150px;
+	  object-fit: cover;
+	}
+
+	.provider-service-card h3 {
+	  font-size: 18px;
+	  font-weight: 600;
+	  margin: 10px 0 5px;
+	}
+
+	.provider-service-card p {
+	  font-size: 14px;
+	  color: #555;
+	  margin-bottom: 15px;
+	}
+
 
