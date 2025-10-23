@@ -1,4 +1,4 @@
-	/* ====== GENERAL RESET ====== */
+
 	* {
 	  margin: 0;
 	  padding: 0;
@@ -16,7 +16,7 @@
 	  display: flex;
 	  flex-direction: column;
 	  align-items: center;
-	  padding: 10px 0;
+	  padding: 5px 0;
 	  background-color: #C8D9E6;
 	  color: #111;
 	  position: sticky;    
@@ -25,16 +25,27 @@
 	}
 
 	.top-header {
-	  display: flex;
-	  align-items: center;
-	  justify-content: center;
-	  gap: 20px;
+	  display: grid;
+      grid-template-columns: 1fr auto 1fr;    
+	  width: 100%;  
+      display: flex;
+      align-items: center;
+      padding: 15px 40px;
+	  gap: 450px;
 	}
 
 	.logo {
-	  width: 60px;
-	  height: 60px;
-	  object-fit: cover;
+	  justify-self: start;
+	  width: 80px;
+	  height: 80px;
+	  object-fit: contain;
+	}
+	
+	.logoTitle {
+	  justify-self: center;
+	  width: 160px; 
+	  height: auto;
+	  object-fit: contain;
 	}
 
 	h1 {
@@ -100,8 +111,8 @@
 	}
 
 	nav a.active::after {
-	  width: 100%; /* Keep underline visible */
-	  background-color: #FFD700; /* Yellow underline */
+	  width: 100%; 
+	  background-color: #FFD700; 
 }
 
 
