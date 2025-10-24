@@ -338,45 +338,40 @@
   font-weight: 700;
   text-transform: capitalize;
 }
-    .user-buttons {
-	  display: flex;
-	  justify-content: center;
-	  gap: 300px;
-	  margin-top: 50px;
-	  margin-bottom: 50px;
-	}
-	.user-btn{
-	  padding: 10px 25px;
-	  font-size: 16px;
-	  font-weight: 500;
-	  border-radius: 25px;
-	  border: none;
-	  cursor: pointer;
-	  transition: all 0.3s ease;
+.user-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 120px;            
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
-	}
+.user-btn {
+  text-decoration: none; 
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-	.request-btn{
-	  background-color: transparent;
-	  color: #2F4156;
-	  border: 2px solid #2F4156;}
-	
-	.request-btn:hover {
-	  background-color: #2F4156;
-	  color: #fff;
-	  transform: scale(1.05);
-	}
+.request-btn,
+.evaluate-btn {
+  background-color: transparent;
+  color: #2F4156;
+  border: 2px solid #2F4156;
+}
 
-	.evaluate-btn {
-	  background-color: transparent;
-	  color: #2F4156;
-	border: 2px solid #2F4156;}
-	  
-	.evaluate-btn:hover {
-	  background-color: #2F4156;
-	  color: #fff;
-	  transform: scale(1.05);
-	}
+.request-btn:hover,
+.evaluate-btn:hover {
+  background-color: #2F4156;
+  color: #fff;
+  transform: scale(1.05);
+}
+
 	/* ===== user request page ===== */
 .request-container {
   width: 80%;
