@@ -33,22 +33,56 @@
 
 	  <!-- ===== MAIN CONTENT PLACEHOLDER ===== -->
 	  <main>
-	  <div class = "user-nav">Home ▸ User</div>
-	  <h1 class = 'user-main'> previous reqests </h1>
-	  <table class="user-table">
-	  <thead>
-	   <tr><th>service name</th><th>date</th><th>cost</th><th>status</th></tr>
-	   </thead>
-      <tbody>
-        <tr><td>Cleaning</td><td>12/10/2025</td><td>500$</td><td>pending</td></tr>
-        <tr><td>Plumbing</td><td>10/10/2025</td><td>700$</td><td>provided</td></tr>
-        <tr><td>Moving</td><td>07/10/2025</td><td>1000$</td><td>declined</td></tr>
-      </tbody>
-    </table>
-	<div class="user-buttons">
-			<button class="user-btn request-btn">Request service</button>
-			<button class="user-btn evaluate-btn">Evaluate service</button>
-		</div>
+	  <div class = "user-nav">Home ▸ User ▸ Request Service</div>
+	  
+
+    <div class="request-container">
+	<h1 class="request-form-title">request service</h1>
+
+      <form class="request-form">
+        <div class="request-form-row">
+          <div class="request-form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" placeholder="Enter your name">
+          </div>
+          <div class="request-form-group">
+            <label for="date">Due date</label>
+            <input type="date" id="date">
+          </div>
+        </div>
+
+        <div class="request-form-row">
+          <div class="request-form-group">
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Add text"></textarea>
+          </div>
+          <div class="request-form-group">
+            <label for="user-request-service">Service</label>
+            <select id="service">
+              <option value="">Select a service</option>
+              <option value="cleaning">Cleaning</option>
+              <option value="plumbing">Plumbing</option>
+              <option value="moving">Moving</option>
+            </select>
+          </div>
+        </div>
+		<div class="request-form-row">
+        <div class="request-form-group">
+          <label for="worker">Select Worker</label>
+          <select id="worker">
+            <option value="">Choose a worker</option>
+            <option value="Ali">Ali</option>
+            <option value="Omar">Omar</option>
+            <option value="Fatimah">Fatimah</option>
+          </select>
+        </div>
+      </div>
+
+        <div class="request-form-submit">
+          <button class="user-btn request-btn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
 	  </main>
 
 	  <!-- ===== FOOTER SECTION ===== -->
