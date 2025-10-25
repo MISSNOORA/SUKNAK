@@ -532,3 +532,111 @@
   color: #fff;
   transform: scale(1.05);
 }
+
+/* ===== About Us Page ===== */
+.about-strip{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:240px;
+  gap:16px;
+  overflow-x:auto;
+  padding:12px;
+  border:2px solid #2F4156;
+  border-radius:10px;
+  background:#F5EFEB;
+  scroll-snap-type:x mandatory;
+}
+.about-card{
+  scroll-snap-align:start;
+  display:flex; align-items:center; gap:12px;
+  padding:12px;
+  border:1.5px solid #C8D9E6;
+  border-radius:12px;
+  background:#fff;
+  transition:transform .2s ease;
+}
+.about-card:hover{ transform:translateY(-4px); }
+.about-card img{
+  width:56px; height:56px; border-radius:50%; object-fit:cover;
+  border:3px solid #C8D9E6;
+}
+.about-text{ display:flex; flex-direction:column; }
+.about-name{ font-weight:600; text-decoration:none; color:#2F4156; }
+.about-name:hover{ text-decoration:underline; color:#111; }
+.about-role{ font-size:13px; color:#555; }
+.about .hint{ font-size:12px; color:#777; margin-top:6px; }
+
+/* Join form */
+.about-form{
+  background:#fff;
+  border:2px solid #2F4156;
+  border-radius:10px;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px 24px;
+}
+.about-form .form{ display:flex; flex-direction:column; gap:6px; }
+.about-form .form{ grid-column:1 / -1; }
+.about-form label{ font-size:14px; font-weight:500; color:#2F4156; }
+.about-form input[type="text"],
+.about-form input[type="email"],
+.about-form input[type="date"],
+.about-form input[type="file"],
+.about-form textarea{
+  border:none; outline:none;
+  padding:8px;
+  border-bottom:2px solid #C8D9E6;
+  background:transparent;
+  font-size:14px;
+}
+.about-form textarea{
+  border:1.5px solid #C8D9E6;
+  padding:10px; border-radius:8px;
+}
+.about-actions{ display:flex; justify-content:flex-end; }
+.about-actions .btn{
+  background:#2F4156; color:#fff; border:none; border-radius:20px;
+  padding:10px 18px; font-weight:600;
+  transition:all .3s ease;
+}
+.about-actions .btn:hover{ background:#C8D9E6; color:#2F4156; }
+
+/* ========= Profile Page ========== */
+
+.profile-head{
+  background:#C8D9E6; border:2px solid #2F4156; border-radius:12px;
+  padding:14px; display:flex; align-items:center; gap:14px; margin-bottom:16px;
+}
+.avatar{ font-size:44px; }
+
+
+.profile-table{
+  width:100%;
+  border-collapse:collapse;
+  background:#fff;
+  border:2px solid #2F4156;
+  border-radius:10px;
+  overflow:hidden;
+}
+.profile-table th,
+.profile-table td{
+  padding:12px 16px;
+  border:1px solid #C8D9E6;
+  text-align:left;
+  vertical-align:top;
+}
+.profile-table th{
+  background:#F5EFEB;
+  font-weight:600;
+  color:#2F4156;
+  width:180px;
+}
+.profile-table .photo{
+  width:140px;
+  height:140px;
+  object-fit:cover;
+  border-radius:10px;
+  border:2px solid #C8D9E6;
+  background:#eee;
+}
