@@ -341,7 +341,7 @@
 .user-buttons {
   display: flex;
   justify-content: center;
-  gap: 120px;            
+  gap: 150px;            
   margin-top: 70px;
   margin-bottom: 50px;
 }
@@ -439,29 +439,29 @@
 }
 
 
-.request-form-submit {
-  display: flex;
-  justify-content: center;
-  margin-top: 25px;
-}
 
-.user-btn.request-btn {
-  background-color: transparent;
+
+.request-form button {
+  display: block;
+  text-decoration: none;
+  margin: 25px auto 5px auto;  
+  padding: 8px 25px;          
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 25px;
   color: #2F4156;
   border: 2px solid #2F4156;
-  border-radius: 25px;
-  padding: 10px 25px;
-  font-size: 16px;
-  font-weight: 500;
+  background-color: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.user-btn.request-btn:hover {
+.request-form button:hover {
   background-color: #2F4156;
   color: #fff;
   transform: scale(1.05);
 }
+
 /* ===== Evaluation Page ===== */
 
 .evaluate-title {
@@ -473,8 +473,8 @@
 }
 
 .evaluation-container {
-  width: 60%;              
-  max-width: 550px;        
+  width: 50%;              
+  max-width: 475px;        
   margin: 0 auto 40px auto;
   background-color: #fff;
   border: 1.5px solid #ccc;
@@ -515,7 +515,7 @@
 .evaluation-form button {
   display: block;
   text-decoration: none;
-  margin: 25px auto 5px auto; 
+  margin: 30px auto 5px auto; 
   padding: 8px 25px;          
   font-size: 15px;
   font-weight: 500;
