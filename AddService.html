@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>Provider Dashboard</title>
+	</head>
+	<body>
+
+	  <!-- ===== HEADER SECTION ===== -->
+	  <header>
+		<div class="top-header">
+		  <img src="images/Logo.png" alt="Website Logo" class="logo">
+		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
+		  <link rel="stylesheet" href="style.css">
+		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+		</div>
+
+		<nav>
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="UserDashboard.html">User</a></li>
+			<li><a href="Services.html">Services</a></li>
+			<li><a href="ProviderDashboard.html">Provider</a></li>
+			<li><a href="AboutUs.html">About Us</a></li>
+		  </ul>
+		</nav>
+	  </header>
+	  
+	  
+	  <div class = "user-nav">Home ▸ Provider ▸ Add Service </div>
+	  <main class="provider-dashboard">
+		<div class="provider-top-buttons">
+			<a href= "AddService.html" class="provider-btn active">Add Service</a>
+			<a href= "StaffMembers.html" class="provider-btn">Staff Members</a>	
+		</div>
+		
+		<fieldset class="provider-Addservices-box">
+			<legend>ADD NEW SERVICE</legend>
+			
+			<form id="addServiceForm">
+				<div class="form-row">
+				  <div class="form-group">
+					<label for="serviceName">Service Name</label>
+					<input type="text" id="serviceName" name="serviceName" placeholder="Enter service name" required>
+				  </div>
+
+				  <div class="form-group">
+					<label for="servicePrice">Service Price</label>
+					<input type="number" id="servicePrice" name="servicePrice" placeholder="Enter price" required min = 0 >
+				  </div>
+				</div>
+
+				<div class="form-row">
+				  <div class="form-group">
+					<label for="serviceDescription">Service Description</label>
+					<textarea id="serviceDescription" name="serviceDescription" rows="4" placeholder="Add text" required></textarea>
+				  </div>
+
+				  <div class="form-group">
+					<label for="servicePhoto">Service Photo</label>
+					<input type="file" id="servicePhoto" name="servicePhoto" accept="image/*" required>
+				  </div>
+				</div>
+
+				<div class="form-buttons">
+				  <button type="submit" class="provider-btn add-btn">Add</button>
+				  <button type="button" class="provider-btn cancel-btn" onclick="window.location.href='providerDashboard.html'">Cancel</button>
+				</div>
+			</form>
+				
+		</fieldset>
+	  </main>
+
+	  <!-- ===== FOOTER SECTION ===== -->
+	  <footer>
+		<div class="footer-content">
+		  <div class="contact-links">
+			  <a href="tel:05XXXX" class="contact-btn call">
+				<i class="fas fa-phone-alt"></i>
+				<span>Call</span>
+			  </a>
+
+			  <a href="https://wa.me/9665XXXXXXX" target="_blank" class="contact-btn whatsapp">
+				<i class="fab fa-whatsapp"></i>
+				<span>WhatsApp</span>
+			  </a>
+
+			  <a href="mailto:example@email.com" class="contact-btn gmail">
+				<i class="fas fa-envelope"></i>
+				<span>Gmail</span>
+			  </a>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+		  <p>© Copyright</p>
+		</div>
+	  </footer>
+
+	</body>
+</html>
