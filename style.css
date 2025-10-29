@@ -112,7 +112,7 @@
 
 	nav a.active::after {
 	  width: 100%; 
-	  background-color: #FFD700; 
+	  background-color: #2F4156; 
 }
 
 
@@ -540,7 +540,7 @@
 
 	
 	
-	/* ===== user page ===== */
+/* ===== user page ===== */
 	
 .user-nav {
 	 font-size:14px; margin:10px 0 12px 5px; color:#2F4156;}
@@ -606,7 +606,7 @@
 
 
 
-		/* ===== user request page ===== */
+/* ===== user request page ===== */
 .request-container {
   width: 80%;
   max-width: 850px;
@@ -698,48 +698,80 @@
 
 
 /* ===== About Us Page ===== */
+
 .about-strip{
-  display:grid;
-  grid-auto-flow:column;
-  grid-auto-columns:240px;
-  gap:16px;
-  overflow-x:auto;
-  padding:12px;
-  border:2px solid #2F4156;
-  border-radius:10px;
-  background:#F5EFEB;
-  scroll-snap-type:x mandatory;
+  display: grid ;
+  grid-auto-flow: column ;       
+  grid-auto-columns: 340px ;    
+  grid-template-rows: repeat(2, 140px) ;
+  gap: 18px 20px ;               
+  overflow-x: auto ;              
+  padding: 12px ;
+  background: #FFFFFF ;            
+  scroll-snap-type: x mandatory;
+  max-width: 1100px;    
+  margin: 0 auto 20px;
 }
+
 .about-card{
-  scroll-snap-align:start;
-  display:flex; align-items:center; gap:12px;
-  padding:12px;
-  border:1.5px solid #C8D9E6;
-  border-radius:12px;
-  background:#fff;
-  transition:transform .2s ease;
+  scroll-snap-align: start;
+  display: flex; align-items: center; justify-content: space-around;
+  gap: 12px;
+  padding: 16px 18px;
+  border: 2px solid #2F4156;
+  border-radius: 12px;
+  background: linear-gradient(0deg, rgba(200,217,230,1) 0%, rgba(255,255,255,1) 70%);
+  transition: transform .2s ease, box-shadow .2s ease;
+  min-width : 320px;
+  height: 120px;
 }
-.about-card:hover{ transform:translateY(-4px); }
+.about-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+
 .about-card img{
-  width:56px; height:56px; border-radius:50%; object-fit:cover;
-  border:3px solid #C8D9E6;
+  width: 70px; height: 70px; border-radius: 50%;
+  border: 2px solid #2F4156;
 }
-.about-text{ display:flex; flex-direction:column; }
-.about-name{ font-weight:600; text-decoration:none; color:#2F4156; }
-.about-name:hover{ text-decoration:underline; color:#111; }
-.about-role{ font-size:13px; color:#555; }
-.about .hint{ font-size:12px; color:#777; margin-top:6px; }
+
+.about-page-container .section + .section{ margin-top: 70px}
+
+.center{ text-align: center;}
+
+.staff-box{
+  border: 2px solid #2F4156;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 20px auto;
+  max-width: 1100px;
+  background:#fff;
+}
+
+.staff-box legend{
+  font-weight: 700;
+  font-size: 1.2rem;
+  color:#2F4156;
+  padding: 0 10px;
+}
+
 
 /* Join form */
-.about-form{
-  background:#fff;
-  border:2px solid #2F4156;
-  border-radius:10px;
-  padding:20px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:18px 24px;
+
+.about-form {
+	background:#fff;
+	border: 4x solid #2F4156;
+	border-radius:10px;
+	padding:20px;
+	display: grid;
+  max-width: 700px;     
+  margin: 0 auto;     
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
 }
+
+.about-form legend {
+  text-align: center;
+}
+
 .about-form .form{ display:flex; flex-direction:column; gap:6px; }
 .about-form .form{ grid-column:1 / -1; }
 .about-form label{ font-size:14px; font-weight:500; color:#2F4156; }
@@ -759,50 +791,87 @@
   padding:10px; border-radius:8px;
 }
 .about-actions{ display:flex; justify-content:flex-end; }
-.about-actions .btn{
+.about-form .btn{
   background:#2F4156; color:#fff; border:none; border-radius:20px;
   padding:10px 18px; font-weight:600;
-  transition:all .3s ease;
+  transition:all .3s ease; transform: 
 }
-.about-actions .btn:hover{ background:#C8D9E6; color:#2F4156; }
+.about-form .btn:hover{ background:#C8D9E6; color:#2F4156; }
 
-/* ========= Profile Page ========== */
+/* ========= Staff Tables ========== */
 
-.profile-head{
-  background:#C8D9E6; border:2px solid #2F4156; border-radius:12px;
-  padding:14px; display:flex; align-items:center; gap:14px; margin-bottom:16px;
+html, body { height: 100%; }
+body { min-height: 100dvh; display: flex; flex-direction: column; }
+main, .section { flex: 1 0 auto; }
+footer { margin-top: 36px; }       
+
+
+.profile-card{
+  max-width: 1100px;
+  margin: 10px auto 0;
+  padding: 18px 18px 8px;
+  background: #fff;
+  border: 2px solid #2F4156;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.06);
 }
-.avatar{ font-size:44px; }
 
 
-.profile-table{
-  width:100%;
-  border-collapse:collapse;
-  background:#fff;
-  border:2px solid #2F4156;
-  border-radius:10px;
-  overflow:hidden;
+.profile-hero{ margin: 10px auto 12px; max-width: 1100px; }
+
+
+.profile-card .profile-matrix{
+  width: 100%;
+  border: 1;              
+  background: transparent;
+  border-collapse: collapse;
 }
-.profile-table th,
-.profile-table td{
-  padding:12px 16px;
-  border:1px solid #C8D9E6;
-  text-align:left;
-  vertical-align:top;
+
+
+.profile-matrix th,
+.profile-matrix td{
+  border: 1px solid #E1E7ED;
+  padding: 12px 14px;
 }
-.profile-table th{
+
+.profile-matrix th.head{
   background:#F5EFEB;
-  font-weight:600;
   color:#2F4156;
-  width:180px;
+  font-weight:700;
 }
-.profile-table .photo{
-  width:140px;
-  height:140px;
-  object-fit:cover;
-  border-radius:10px;
+
+.vhead{
+  background:#F5EFEB;
+  color:#2F4156;
+  font-weight:700;
+  text-align:center;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+}
+
+.photo-cell{ text-align:center; background:#F2F6FA; }
+.photo{
+  width: 150px; height: 150px; 
+  border-radius: 12px; 
   border:2px solid #C8D9E6;
-  background:#eee;/* ===== Home page ===== */
+  background:#eee;
+}
+
+
+.profile-matrix  td{ background: rgba(200,217,230,.08); }
+
+
+.v-name  { width:70px; }
+.v-photo { width:210px; }
+.v-dob   { width:78px; }
+.v-email { width:86px; }
+.c-area  { width:250px; }
+.c-skill { width:300px; }
+.c-edu   { width:300px; }
+
+
+  
+  /* ===== Home page ===== */
 
 .home-section {
   margin: 40px auto;
@@ -821,7 +890,7 @@
 .home-vision-container {
   text-align: center;
   padding: 70px 25px;
-  background-color: rgba(245, 239, 235, 0.15); /* لمسة Beige خفيفة */
+  background-color: rgba(245, 239, 235, 0.15); 
   border-radius: 14px;
 }
 
@@ -1208,6 +1277,8 @@
     color: #ffffff;
     font-weight: 600;
 }
+
+
 
 
 }
