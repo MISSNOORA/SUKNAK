@@ -1,169 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Suknak</title>
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suknak</title>
+  </head>
+  <body>
+    <!-- ===== HEADER SECTION ===== -->
+    <header>
+      <div class="top-header">
+        <img src="images/Logo.png" alt="Website Logo" class="logo" />
+        <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle" />
+        <link rel="stylesheet" href="style.css" />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+      </div>
 
-	  <!-- ===== HEADER SECTION ===== -->
-	  <header>
-		<div class="top-header">
-		  <img src="images/Logo.png" alt="Website Logo" class="logo">
-		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
-		  <link rel="stylesheet" href="style.css">
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="UserDashboard.html">User</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="ProviderDashboard.html">Provider</a></li>
+          <li><a href="AboutUs.html" class="active">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
+    <div class="user-nav">Home ▸ About Us</div>
 
-		</div>
-
-		<nav>
-		  <ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="UserDashboard.html">User</a></li>
-			<li><a href="Services.html">Services</a></li>
-			<li><a href="ProviderDashboard.html">Provider</a></li>
-			<li><a href="AboutUs.html">About Us</a></li>
-		  </ul>
-		</nav>
-	  </header>
-	  
-	  
-
-	  <!-- ===== MAIN CONTENT PLACEHOLDER ===== -->
-	  <main class="about us page">
+    <main class="about-page-container">
+      
 	  <section class="section">
-	  <h1>about us page</h1>
-	  <h2 class="Center"> Staff Members </h2> 
-	  
-	  
-	  <! ---- here maybe add scroll ---->
-	  <div class="about-strip" arial-label="Team members">
-	  
-	  <! ---- Member Cards ---- >
-	  
-	   <fieldset class="Staff-Members-box">
-			<legend>Members</legend>
-			
-	  <div class="member-card"> 
-		<img src="profile.jpeg" alt="member photo">
-		<div class="member-text">
-			<a class="member-name" href="profile.html"> Omar </a>
-		    <span class="member-role"> Farmer </span>
-		</div>
-	  </div>
-		
-	  <div class="member-card"> 
-		<img src="profile.jpeg" alt="member photo">
-		<div class="member-text">
-			<a class="member-name" href="profile.html"> Fatima </a>
-		    <span class="member-role"> House Maid </span>
-		</div>
-	  </div>
-	  
-	  
-	  <div class="member-card"> 
-		<img src="profile.jpeg" alt="member photo">
-		<div class="member-text">
-			<a class="member-name" href="profile.html"> Sara </a>
-		    <span class="member-role"> Baby Sitter </span>
-		</div>
-	  </div>
-	 </div>
-	 </section>
-	 </fieldset>
-	 
-	  
-	  
-	<! ---- Form ---- >
-	 	  
-		  
-	<section class="section"> 
-	  <h2 class="center"> Join Our Team </h2> 
-	 
-	 
-	<fieldset class="about-Form">
-		<legend> Join Our Team </legend>
+	  <fieldset class="staff-box">
+        <legend class="center">Staff Members</legend>
 
-	 <form class="join-form" action="#" method="post" enctype="multipart/form-data">
-	   
-	 <div class="f"> 
-		<label for="FullName"> Full Name </label> 
-		<input id="FullName" name="FullName" type="Text" placeholder="Your Name" required>
-	</div> 
-	
-	<div class="f"> 
-		<label for="email"> Email </label> 
-		<input id="email" name="email" type="email" placeholder="you@example.com" required>
-	</div> 
-	
-	  <div class="f"> 
-		<label for="DOB"> Date OF Birth </label> 
-		<input id="dob" name="dob" type="date" required>
-	</div> 
-	  
-	  <div class="f"> 
-		<label for="expertise"> Area OF Expertise </label> 
-		<input id="expertise" name="expertise" type="text" placeholder="House Maids , Baby Sitter" required>
-	</div> 
-	  
-	  <div class="f"> 
-		<label for="skills"> Skills </label> 
-		<input id="skills" name="skills" type="text"  required>
-	</div> 
-	  
-	  <div class="f"> 
-		<label for="education"> Education </label> 
-		<input id="education" name="education" type="text" required>
-	</div> 
-	  
-	  <div class="f"> 
-		<label for="photo"> Member Photo </label> 
-		<input id="photo" name="photo" type="file" accept="image/*" required>
-	</div> 
-	  
-	  <div class="f"> 
-		<label for="message"> Message </label> 
-		<textarea id="message" name="message" rows="3" placeholder="write a short message"> </textarea>
-	</div> 
-	  
-	  <div class="f"> 
-		<button type="submit"class="btn"> Join </button> 
-	</div> 
-	</form>
-	</fieldset>
-	</section>
-</main>
+      
+        <div class="about-strip" aria-label="Team members (scroll horizontally)">
+        
+			<!-- Cleaning -->
+          <div class="about-card">
+            <img src="images/Staff/clean1.png" alt="Omar" />
+            <div class="about-text">
+              <a class="about-name" href="ProfileOmar.html">Omar</a>
+              <span class="member-role">Home Cleaning</span>
+            </div>
+          </div>
 
-	  <!-- ===== FOOTER SECTION ===== -->
-	  <footer>
-		<div class="footer-content">
-		  <div class="contact-links">
-			  <a href="tel:05XXXX" class="contact-btn call">
-				<i class="fas fa-phone-alt"></i>
-				<span>Call</span>
-			  </a>
+          <div class="about-card">
+            <img src="images/Staff/clean2.png" alt="Lina" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#lina">Lina</a>
+              <span class="member-role">Home Cleaning</span>
+            </div>
+          </div>
 
-			  <a href="https://wa.me/9665XXXXXXX" target="_blank" class="contact-btn whatsapp">
-				<i class="fab fa-whatsapp"></i>
-				<span>WhatsApp</span>
-			  </a>
+          <!-- Babysitting -->
+          <div class="about-card">
+            <img src="images/Staff/Baby-1.png" alt="Sara" />
+            <div class="about-text">
+              <a class="about-name" href="ProfileSara.html">Sara</a>
+              <span class="member-role">Baby Sitting</span>
+            </div>
+          </div>
 
-			  <a href="mailto:example@email.com" class="contact-btn gmail">
-				<i class="fas fa-envelope"></i>
-				<span>Gmail</span>
-			  </a>
-			</div>
-		</div>
+          <div class="about-card">
+            <img src="images/Staff/babysitting2.png" alt="Noor" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#noor">Noor</a>
+              <span class="member-role">Baby Sitting</span>
+            </div>
+          </div>
 
-		<div class="footer-bottom">
-		  <p>© Copyright</p>
-		</div>
-	  </footer>
+          <!-- Garden Maintenance -->
+          <div class="about-card">
+            <img src="images/Staff/Garden-1.png" alt="Faisal" />
+            <div class="about-text">
+              <a class="about-name" href="ProfileFaisal.html">Faisal</a>
+              <span class="member-role">Garden Maintenance</span>
+            </div>
+          </div>
 
-	</body>
+          <div class="about-card">
+            <img src="images/Staff/gardin2.png" alt="Hana" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#hana">Hana</a>
+              <span class="member-role">Garden Maintenance</span>
+            </div>
+          </div>
+
+          <!-- Furniture Moving -->
+          <div class="about-card">
+            <img src="images/Staff/Moving-1.png" alt="Khalid" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#khalid">Khalid</a>
+              <span class="member-role">Furniture Moving</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="images/Staff/moving2.png" alt="Rayan" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#rayan">Rayan</a>
+              <span class="member-role">Furniture Moving</span>
+            </div>
+          </div>
+
+          <!-- Private Chef -->
+          <div class="about-card">
+            <img src="images/Staff/Chef-1.png" alt="Youssef" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#youssef">Youssef</a>
+              <span class="member-role">Private Chef</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="images/Staff/chef2.png" alt="Maha" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#maha">Maha</a>
+              <span class="member-role">Private Chef</span>
+            </div>
+          </div>
+
+          <!-- Home Repair -->
+          <div class="about-card">
+            <img src="images/Staff/Repair-1.png" alt="Ali" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#ali">Ali</a>
+              <span class="member-role">Home Repair</span>
+            </div>
+          </div>
+
+          <div class="about-card">
+            <img src="images/Staff/repair2.png" alt="Fatimah" />
+            <div class="about-text">
+              <a class="about-name" href="Profile.html#fatimah">Fatimah</a>
+              <span class="member-role">Home Repair</span>
+            </div>
+          </div>
+        </div>
+		</fieldset>
+      </section>
+
+      <!-- ====== Join Our Team Form ====== -->
+     
+	 <section class="section">
+        <h2 class="center"> YOU CAN BE PART OF US! </h2>
+        <br>
+        <fieldset class="about-form">
+          <legend>Join Our Team</legend>
+
+          <form class="about-form" action="#" method="post" enctype="multipart/form-data">
+            <div class="f">
+              <label for="FullName">Full Name</label>
+              <input id="FullName" name="FullName" type="text" placeholder="Your Name" required />
+            </div>
+
+            <div class="f">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="f">
+              <label for="dob">Date Of Birth</label>
+              <input id="dob" name="dob" type="date" required />
+            </div>
+
+            <div class="f">
+              <label for="expertise">Area Of Expertise</label>
+              <input id="expertise" name="expertise" type="text" placeholder="e.g., Cleaning, Babysitting" required />
+            </div>
+
+            <div class="f">
+              <label for="skills">Skills</label>
+              <input id="skills" name="skills" type="text" required />
+            </div>
+
+            <div class="f">
+              <label for="education">Education</label>
+              <input id="education" name="education" type="text" required />
+            </div>
+
+            <div class="f">
+              <label for="photo">Member Photo</label>
+              <input id="photo" name="photo" type="file" accept="image/*" required />
+            </div>
+
+            <div class="f">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="3" placeholder="Write a short message"></textarea>
+            </div>
+
+            <div class="f">
+              <button type="submit" class="btn">Join</button>
+            </div>
+          </form>
+        </fieldset>
+      </section>
+    </main>
+
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer>
+      <div class="footer-content">
+        <div class="contact-links">
+          <a href="tel:05XXXX" class="contact-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+          </a>
+
+          <a href="https://wa.me/9665XXXXXXX" target="_blank" class="contact-btn whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+
+          <a href="mailto:example@email.com" class="contact-btn gmail">
+            <i class="fas fa-envelope"></i>
+            <span>Gmail</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© Copyright</p>
+      </div>
+    </footer>
+  </body>
 </html>
+
 	  </footer>
 
 	</body>
