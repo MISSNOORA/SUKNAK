@@ -699,32 +699,30 @@
 
 /* ===== About Us Page ===== */
 
-.about-strip{
-  display: grid ;
-  grid-auto-flow: column ;       
-  grid-auto-columns: 340px ;    
-  grid-template-rows: repeat(2, 140px) ;
-  gap: 18px 20px ;               
-  overflow-x: auto ;              
-  padding: 12px ;
-  background: #FFFFFF ;            
-  scroll-snap-type: x mandatory;
-  max-width: 1100px;    
+.about-strip {
+  display: flex;
+  gap: 20px;                    
+  overflow-x: auto;
+  padding: 12px;
+  background: #FFFFFF;
+  max-width: 1100px;
   margin: 0 auto 20px;
 }
 
-.about-card{
+.about-card {
+  flex: 0 0 320px;              
+  height: 120px;
   scroll-snap-align: start;
-  display: flex; align-items: center; justify-content: space-around;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   gap: 12px;
   padding: 16px 18px;
   border: 2px solid #2F4156;
   border-radius: 12px;
   background: linear-gradient(0deg, rgba(200,217,230,1) 0%, rgba(255,255,255,1) 70%);
-  transition: transform .2s ease, box-shadow .2s ease;
-  min-width : 320px;
-  height: 120px;
 }
+
 .about-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
 
 .about-card img{
@@ -780,7 +778,7 @@
 .about-form input[type="date"],
 .about-form input[type="file"],
 .about-form textarea{
-  border:none; outline:none;
+  border:none; 
   padding:8px;
   border-bottom:2px solid #C8D9E6;
   background:transparent;
@@ -1282,4 +1280,3 @@ footer { margin-top: 36px; }
 
 
 }
-
