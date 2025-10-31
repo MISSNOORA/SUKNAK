@@ -681,17 +681,19 @@
 	  font-size: 15px;
 	  font-weight: 500;
 	  border-radius: 25px;
-	  color: #2F4156;
-	  border: 2px solid #2F4156;
-	  background-color: transparent;
+	  color: #fff;
+	  border: none;
+	  background-color: #2F4156;
 	  cursor: pointer;
-	  transition: all 0.3s ease;
+	  transition: all 0.3s ease;transform:
 	}
 
+	
+	
 	.evaluation-form button:hover {
-	  background-color: #2F4156;
-	  color: #fff;
-	  transform: scale(1.05);
+	  background-color: #C8D9E6;
+	  color:#2F4156;
+	  
 	}
 
 
@@ -840,17 +842,16 @@
 	  font-size: 15px;
 	  font-weight: 500;
 	  border-radius: 25px;
-	  color: #2F4156;
-	  border: 2px solid #2F4156;
-	  background-color: transparent;
+	  color: #fff;
+	  border: none;
+	  background-color:  #2F4156;
 	  cursor: pointer;
-	  transition: all 0.3s ease;
+	  transition: all 0.3s ease;transform:
 	}
 
 	.request-form button:hover {
-	  background-color: #2F4156;
-	  color: #fff;
-	  transform: scale(1.05);
+	   background-color: #C8D9E6;
+	  color:#2F4156;
 	}
 
 
