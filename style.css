@@ -836,8 +836,11 @@
 	  padding: 8px;
 	}
 
-
-
+    .request-container input:focus,
+    .request-container select:focus,
+	.request-container textarea:focus {
+	  border-color: #2F4156;
+	}
 
 	.request-form button {
 	  display: block;
