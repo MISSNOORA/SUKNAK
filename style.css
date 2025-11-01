@@ -683,7 +683,7 @@
 	  border: none;
 	  background-color: #2F4156;
 	  cursor: pointer;
-	  transition: all 0.3s ease;transform:
+	  transition: all 0.3s ease;
 	}
 
 	
@@ -854,7 +854,7 @@
 	  border: none;
 	  background-color:  #2F4156;
 	  cursor: pointer;
-	  transition: all 0.3s ease;transform:
+	  transition: all 0.3s ease;
 	}
 
 	.request-form button:hover {
@@ -1506,4 +1506,4 @@
 
 
 
-	}
+	
