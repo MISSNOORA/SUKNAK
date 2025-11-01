@@ -7,21 +7,20 @@
 	</head>
 	<body>
 
-	  <!-- ===== HEADER SECTION ===== -->
+	  <!--HEADER -->
 	  <header>
 		<div class="top-header">
 		  <img src="images/Logo.png" alt="Website Logo" class="logo">
 		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
 		  <link rel="stylesheet" href="style.css">
 		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
 		</div>
 
+		<!--NAV BAR -->
 		<nav>
 		  <ul>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="UserDashboard.html">User</a></li>
+			<li><a href="UserDashboard.html" class="active">User</a></li>
 			<li><a href="Services.html">Services</a></li>
 			<li><a href="ProviderDashboard.html">Provider</a></li>
 			<li><a href="AboutUs.html">About Us</a></li>
@@ -31,73 +30,74 @@
 	  
 	  
 
-	  <!-- ===== MAIN CONTENT PLACEHOLDER ===== -->
-	  <main>
-	  <div class = "user-nav"> User ▸ Request Service</div>
+
+	<main>
+		<div class = "user-nav"> User ▸ Request Service</div>
 	  
+		<!--OUR REQUEST SERVICE FORM -->
+		<div class="request-container">
+		<h1 class="request-form-title">request service</h1>
 
-    <div class="request-container">
-	<h1 class="request-form-title">request service</h1>
+		  <form class="request-form" action="#" method="post">
+			<div class="request-form-row">
+			  <div class="request-form-group">
+				<label for="fullname">Full Name</label>
+				<input type="text" id="fullname" placeholder="Enter your name" required>
+			  </div>
+			  
+			  <div class="request-form-group">
+				<label for="date">Due date</label>
+				<input type="date" id="date" required>
+			  </div>
+			</div>
 
-      <form class="request-form">
-        <div class="request-form-row">
-          <div class="request-form-group">
-            <label for="fullname">Full Name</label>
-            <input type="text" id="fullname" placeholder="Enter your name" required>
-          </div>
-          <div class="request-form-group">
-            <label for="date">Due date</label>
-            <input type="date" id="date" required>
-          </div>
-        </div>
+			<div class="request-form-row">
+			  <div class="request-form-group">
+				<label for="request-description">Description</label>
+				<textarea id="request-description" placeholder="Add text" required></textarea>
+			  </div>
+			  
+			  <div class="request-form-group">
+				<label for="user-request-service">Service</label>
+				<select id="user-request-service" required>
+				  <option value="">Select a service</option>
+				  <option value="Home cleaning">Home cleaning</option>
+				  <option value="Baby sitting">Baby sitting</option>
+				  <option value="Furniture moving">Furniture moving</option>
+				  <option value="Garden maintenance">Garden maintenance</option>
+				  <option value="Private cook">Private cook</option>
+				  <option value="Home repair">Home repair</option>
+				</select>
+			  </div>
+			</div>
+			
+			<div class="request-form-row">
+			<div class="request-form-group">
+			  <label for="request-worker">Select Worker</label>
+			  <select id="request-worker" required>
+				<option value="">Choose a worker</option>
+				<option value="Ali">Sara</option>
+				<option value="Omar">Omar</option>
+				<option value="Lina">Lina</option>
+				<option value="Noor">Noor</option>
+				<option value="Faisal">Faisal</option>
+				<option value="Hana">Hana</option>
+				<option value="Khalid">Khalid</option>
+				<option value="Rayan">Rayan</option>
+				<option value="Youssef">Youssef</option>
+				<option value="Maha">Maha</option>
+				<option value="Ali">Ali</option>
+				<option value="Fatimah">Fatimah</option>
+			  </select>
+			</div>
+			</div>
+			  <button type="submit">Submit</button>
+			
+		  </form>
+		</div>
+	</main>
 
-        <div class="request-form-row">
-          <div class="request-form-group">
-            <label for="request-description">Description</label>
-            <textarea id="request-description" placeholder="Add text" required></textarea>
-          </div>
-          <div class="request-form-group">
-            <label for="user-request-service">Service</label>
-            <select id="user-request-service" required>
-              <option value="">Select a service</option>
-              <option value="Home cleaning">Home cleaning</option>
-              <option value="Baby sitting">Baby sitting</option>
-              <option value="Furniture moving">Furniture moving</option>
-			  <option value="Garden maintenance">Garden maintenance</option>
-			  <option value="Private cook">Private cook</option>
-			  <option value="Home repair">Home repair</option>
-            </select>
-          </div>
-        </div>
-		<div class="request-form-row">
-        <div class="request-form-group">
-          <label for="request-worker">Select Worker</label>
-          <select id="request-worker" required>
-            <option value="">Choose a worker</option>
-            <option value="Ali">Sara</option>
-            <option value="Omar">Omar</option>
-            <option value="Lina">Lina</option>
-			<option value="Noor">Noor</option>
-			<option value="Faisal">Faisal</option>
-			<option value="Hana">Hana</option>
-			<option value="Khalid">Khalid</option>
-			<option value="Rayan">Rayan</option>
-			<option value="Youssef">Youssef</option>
-			<option value="Maha">Maha</option>
-			<option value="Ali">Ali</option>
-			<option value="Fatimah">Fatimah</option>
-          </select>
-        </div>
-      </div>
-
-        
-          <button type="submit">Submit</button>
-        
-      </form>
-    </div>
-	  </main>
-
-	  <!-- ===== FOOTER SECTION ===== -->
+	  <!--FOOTER-->
 	  <footer>
 		<div class="footer-content">
 		  <div class="contact-links">

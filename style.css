@@ -11,7 +11,7 @@
 	  color: #333;
 	}
 
-	/* ====== HEADER ====== */
+	/*HEADER*/
 	header {
 	  display: flex;
 	  flex-direction: column;
@@ -47,14 +47,9 @@
 	  height: auto;
 	  object-fit: contain;
 	}
-
-	h1 {
-	  font-size: 24px;
-	  font-weight: 600;
-	  letter-spacing: 1px;
-	}
-
-
+	
+	
+	/*NAV BAR*/
 	nav {
 	  font-weight: 600;
 	  width: 100%;
@@ -74,6 +69,7 @@
 	  padding: 0;
 	}
 
+	/*NAV LINKS*/
 	nav a {
 	  position: relative;
 	  text-decoration: none;
@@ -116,7 +112,7 @@
 }
 
 
-	/* ====== FOOTER ====== */
+	/*FOOTER*/
 	footer {
 	  background-color: #2F4156;
 	  color: #F5EFEB;
@@ -151,7 +147,7 @@
 	  color: #F5EFEB;
 	}
 	
-	/* ====== CONTACT BUTTONS ====== */
+	/*CONTACT BUTTONS*/
 	.contact-links {
 	  display: flex;
 	  justify-content: center;
@@ -206,7 +202,7 @@
 	}
 	
 	
-	/* ===== PROVIDER DASHBOARD ===== */
+	/*PROVIDER DASHBOARD*/
 	
 	.provider-dashboard {
 	  padding: 40px;
@@ -307,7 +303,7 @@
 
 
 	
-	/* ===== add service page ===== */
+	/* ADD SERVICE FORM*/
 	
 	.provider-Addservices-box {
 	  border: 2px solid #2F4156;
@@ -387,7 +383,7 @@
 	}
 	
 	
-	/* ===== staff page ===== */
+	/*STAFF LIST*/
 	
 	.provider-Staff-box {
 	  border: 2px solid #2F4156;
@@ -463,6 +459,7 @@
 	  cursor: pointer;
 	}
 	
+	/*DELETE CHECHED*/
 	.delete-container {
 	  text-align: center;
 	  margin-top: 25px;
@@ -475,7 +472,6 @@
 	  border: none;
 	  padding: 12px 25px;
 	  border-radius: 25px;
-	  cursor: pointer;
 	  font-size: 16px;
 	  transition: all 0.3s ease;
 	}
@@ -489,6 +485,7 @@
 	  display: inline-block;
 	}
 	
+	/*ADD MEMBER FORM*/
 	.add-member-container {
 	  text-align: center;
 	  margin-top: 25px;
@@ -624,7 +621,8 @@
 
 
 
-	/* ===== Evaluation Page ===== */
+	/* USER EVALUTION FORM*/
+	
 	.evaluate-title {
 	  font-size: 26px;
 	  text-align: center;      
@@ -699,12 +697,20 @@
 
 		
 		
-	/* ===== user page ===== */
+	/*USER DASHBOARD*/
 		
 	.user-nav {
-		 font-size:14px; margin:10px 0 12px 5px; color:#2F4156;}
+		font-size:14px; 
+		margin:10px 0 12px 5px; 
+		color:#2F4156;
+		}
+		
 	.user-main{
-		font-size:27px; margin:12px 0 18px 8px;  color: #2F4156;}
+		font-size:27px;
+		margin:12px 0 18px 8px;
+		color: #2F4156;
+		}
+		
 	.user-table {
 	  width: 100%;
 	  border-collapse: collapse; 
@@ -744,7 +750,6 @@
 	  font-weight: 500;
 	  border-radius: 25px;
 	  border: none;
-	  cursor: pointer;
 	  transition: all 0.3s ease;
 	}
 
@@ -765,7 +770,7 @@
 
 
 
-	/* ===== user request page ===== */
+	/*REQUEST SERVICE FORM */
 	.request-container {
 	  width: 80%;
 	  max-width: 850px;
@@ -855,7 +860,7 @@
 	}
 
 
-	/* ===== About Us Page ===== */
+	/*ABOUT US PAGE*/
 
 	.about-strip {
 	  display: flex;
@@ -881,16 +886,22 @@
 	  background: linear-gradient(0deg, rgba(200,217,230,1) 0%, rgba(255,255,255,1) 70%);
 	}
 
-	.about-card:hover{ transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,.12); }
+	.about-card:hover{ 
+		transform: translateY(-3px);
+		box-shadow: 0 6px 16px rgba(0,0,0,.12);
+	}
 
 	.about-card img{
-	  width: 70px; height: 70px; border-radius: 50%;
+	  width: 70px;
+	  height: 70px;
+	  border-radius: 50%;
 	  border: 2px solid #2F4156;
 	}
 
-	.about-page-container .section + .section{ margin-top: 70px}
 
-	.center{ text-align: center;}
+	.center{ 
+		text-align: center;
+	}
 
 	.staff-box{
 	  border: 2px solid #2F4156;
@@ -909,7 +920,7 @@
 	}
 
 
-	/* Join form */
+	/* JOIN TEAM FORM */
 
 	.about-form {
 		background:#fff;
@@ -917,20 +928,28 @@
 		border-radius:10px;
 		padding:20px;
 		display: grid;
-	  max-width: 700px;     
-	  margin: 0 auto;     
-	  display: grid;
-	  grid-template-columns: 1fr 1fr;
-	  gap: 18px 24px;
+		max-width: 700px;     
+		margin: 0 auto;     
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 18px 24px;
 	}
 
 	.about-form legend {
 	  text-align: center;
 	}
 
-	.about-form .form{ display:flex; flex-direction:column; gap:6px; }
+	.about-form .form{ display:flex;
+		flex-direction:column;
+		gap:6px; 
+		}
 	.about-form .form{ grid-column:1 / -1; }
-	.about-form label{ font-size:14px; font-weight:500; color:#2F4156; }
+	
+	.about-form label{ font-size:14px;
+		font-weight:500;
+		color:#2F4156;
+		}
+		
 	.about-form input[type="text"],
 	.about-form input[type="email"],
 	.about-form input[type="date"],
@@ -944,22 +963,35 @@
 	}
 	.about-form textarea{
 	  border:1.5px solid #C8D9E6;
-	  padding:10px; border-radius:8px;
+	  padding:10px;
+	  border-radius:8px;
 	}
-	.about-actions{ display:flex; justify-content:flex-end; }
+	.about-actions{ display:flex;
+		justify-content:flex-end; 
+		}
+		
 	.about-form .btn{
-	  background:#2F4156; color:#fff; border:none; border-radius:20px;
-	  padding:10px 18px; font-weight:600;
+	  background:#2F4156;
+	  color:#fff;
+	  border:none;
+	  border-radius:20px;
+	  padding:10px 18px;
+	  font-weight:600;
 	  transition:all .3s ease; transform: 
 	}
-	.about-form .btn:hover{ background:#C8D9E6; color:#2F4156; }
+	.about-form .btn:hover{ 
+		background:#C8D9E6; 
+		color:#2F4156; 
+		}
 
-	/* ========= Staff Tables ========== */
+	/* STAFF PROFILE TABLE*/
 
-	html, body { height: 100%; }
-	body { min-height: 100dvh; display: flex; flex-direction: column; }
-	main, .section { flex: 1 0 auto; }
-	footer { margin-top: 36px; }       
+
+	main, .section { 
+		flex: 1 0 auto;
+		}
+	footer { 
+	margin-top: 36px; }       
 
 
 	.profile-card{
@@ -972,8 +1004,6 @@
 	  box-shadow: 0 8px 24px rgba(0,0,0,.06);
 	}
 
-
-	.profile-hero{ margin: 10px auto 12px; max-width: 1100px; }
 
 
 	.profile-card .profile-matrix{
@@ -1005,7 +1035,11 @@
 	  text-orientation:mixed;
 	}
 
-	.photo-cell{ text-align:center; background:#F2F6FA; }
+	.photo-cell{ 
+		text-align:center; 
+		background:#F2F6FA;
+		}
+		
 	.photo{
 	  width: 150px; height: 150px; 
 	  border-radius: 12px; 
@@ -1014,7 +1048,7 @@
 	}
 
 
-	.profile-matrix  td{ background: rgba(200,217,230,.08); }
+	.profile-matrix  td{ background: #ffff; }
 
 
 	.v-name  { width:70px; }
@@ -1037,7 +1071,7 @@
 	  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 	}
 
-	/* ===== Home page Vision Section ===== */
+	/* HOMEPAGE*/
 	
 	.vision-section {
 	  position: relative;
@@ -1109,7 +1143,7 @@
 	}
 
 
-	/* ===== Home page Services Section ===== */
+	/* HOMEPAGE SERVICES SECTION */
 	.home-services {
 	  background-color: #F5EFEB; 
 	  padding: 40px 25px;
@@ -1209,7 +1243,7 @@
 	  overflow:hidden;
 	}
 
-	/* ===== Reviews ===== */
+	/*HOMEPAGE REVIEW SECTION */
 	.home-reviews {
 	  background: #F5EFEB; 
 	  padding: 40px 25px;
@@ -1303,7 +1337,7 @@
 	}
 
 
-	/* ===== FAQ ===== */
+	/*HOMEPAGE Q/A SECTION*/
 	.home-faq {
 	  background: #F5EFEB;
 	  padding: 35px 25px;
@@ -1354,7 +1388,10 @@
 	  font-size: 14px;
 	  line-height: 1.5;
 	}
-	/* ===== Services Page ===== */
+	
+	
+	
+	/* SERVICE PAGE*/
 	.services-page {
 		background-color: #f9f9f9;
 		padding: 0 80px 50px;
