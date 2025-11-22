@@ -1,210 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-	  <meta charset="UTF-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Suknak</title>
-	</head>
-	<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suknak</title>
 
-	  <!--HEADER -->
-	  <header>
-		<div class="top-header">
-		  <img src="images/Logo.png" alt="Website Logo" class="logo">
-		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
-		  <link rel="stylesheet" href="style.css">
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--HEADER -->
+    <header>
+      <div class="top-header">
+        <img src="images/Logo.png" alt="Website Logo" class="logo" />
+        <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle" />
 
+        <!-- زر تغيير الثيم -->
+        <button id="themeToggle" class="theme-btn">Switch Theme</button>
+      </div>
 
-		</div>
-		
-		
-		<!--NAV BAR -->
-		<nav>
-		  <ul>
-			<li><a href="index.html" class="active">Home</a></li>
-			<li><a href="UserDashboard.html">User</a></li>
-			<li><a href="Services.html">Services</a></li>
-			<li><a href="ProviderDashboard.html">Provider</a></li>
-			<li><a href="AboutUs.html">About Us</a></li>
-		  </ul>
-		</nav>
-	  </header>
-	  
-	  
-	  <main>
-		<!--OUR VISION SECTION -->
-		<section class="vision-section">
-		  <div class="vision-image">
-			<img src="images/Ourvision.png" alt="Our Vision Character">
-		  </div>
+      <!--NAV BAR -->
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="UserDashboard.html">User</a></li>
+          <li><a href="Services.html">Services</a></li>
+          <li><a href="ProviderDashboard.html">Provider</a></li>
+          <li><a href="AboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
 
-		  <div class="vision-content">
-			<div class="vision-text">
-			  <h2>Our Vision</h2>
-			  <p>
-				At Suknak, we aim to connect every home with trusted service providers.
-				Our vision is to make home maintenance, cleaning, and personal services
-				simple, fast, and reliable for everyone.
-			  </p>
-			</div>
-		  </div>
-		</section>
-		
+    <main>
+      <!--OUR VISION SECTION -->
+      <section class="vision-section">
+        <div class="vision-image">
+          <img src="images/Ourvision.png" alt="Our Vision Character" />
+        </div>
 
+        <div class="vision-content">
+          <div class="vision-text">
+            <h2>Our Vision</h2>
+            <p>
+              At Suknak, we aim to connect every home with trusted service
+              providers. Our vision is to make home maintenance, cleaning, and
+              personal services simple, fast, and reliable for everyone.
+            </p>
+          </div>
+        </div>
+      </section>
 
-		<!--OUR SERVICES SECTION -->
-		<section class="home-services home-section" >
-			<h2 id="home-services-title" class="home-services-title">Our Services</h2>
+      <!--OUR SERVICES SECTION -->
+      <section class="home-services home-section">
+        <h2 id="home-services-title" class="home-services-title">
+          Our Services
+        </h2>
 
-		<div class="home-services-grid">
-		<div class="home-service">
-		  <div class="home-service-card">
-			<img src="images/homecleaning.jpg" alt="Home cleaning" class="home-service-img">
-			<div class="home-service-overlay">
-			  <h3 class="home-service-name">Home cleaning</h3>
-			  <div class="home-service-info">
-				<p>Professional cleaners who keep your home fresh, organized, and spotless from top to bottom.</p>
-	 
-			  </div>
-			</div>
-		  </div>
-		</div>
+        <div class="home-services-grid">
+          <div class="home-service">
+            <div class="home-service-card">
+              <img
+                src="images/homecleaning.jpg"
+                alt="Home cleaning"
+                class="home-service-img"
+              />
+              <div class="home-service-overlay">
+                <h3 class="home-service-name">Home cleaning</h3>
+                <div class="home-service-info">
+                  <p>
+                    Professional cleaners who keep your home fresh, organized,
+                    and spotless from top to bottom.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-		<div class="home-service">
-		  <div class="home-service-card">
-			<img src="images/babysitting.jpg" alt="Babysitting" class="home-service-img">
-			<div class="home-service-overlay">
-			  <h3 class="home-service-name">Baby sitting</h3>
-			  <div class="home-service-info">
-				<p>Trusted babysitters providing safe, caring, and reliable supervision for your children at home.</p> 
-			  </div>
-			</div>
-		  </div>
-		</div>
+          <div class="home-service">
+            <div class="home-service-card">
+              <img
+                src="images/babysitting.jpg"
+                alt="Babysitting"
+                class="home-service-img"
+              />
+              <div class="home-service-overlay">
+                <h3 class="home-service-name">Baby sitting</h3>
+                <div class="home-service-info">
+                  <p>
+                    Trusted babysitters providing safe, caring, and reliable
+                    supervision for your children at home.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-		<div class="home-service">
-		  <div class="home-service-card">
-			<img src="images/furnituremoving.jpg" alt="Furniture moving" class="home-service-img">
-			<div class="home-service-overlay">
-			  <h3 class="home-service-name">Furniture moving</h3>
-			  <div class="home-service-info">
-				<p>Skilled movers to lift, pack, and transport your furniture safely and efficiently between homes</p>
-			  </div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</section>
+          <div class="home-service">
+            <div class="home-service-card">
+              <img
+                src="images/furnituremoving.jpg"
+                alt="Furniture moving"
+                class="home-service-img"
+              />
+              <div class="home-service-overlay">
+                <h3 class="home-service-name">Furniture moving</h3>
+                <div class="home-service-info">
+                  <p>
+                    Skilled movers to lift, pack, and transport your furniture
+                    safely and efficiently between homes
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!--OUR REVIEWS SECTION -->
+      <section class="home-reviews home-section">
+        <h2 id="home-reviews-title" class="home-reviews-title">
+          User Reviews
+        </h2>
 
+        <div class="home-reviews-list">
+          <div class="home-review">
+            <header class="home-review-head">
+              <div class="home-review-avatar">👤</div>
+              <h3 class="home-review-name">Lama Alhammed</h3>
+            </header>
 
-	<!--OUR REVIEWS SECTION -->
-	<section class="home-reviews home-section" >
-	  <h2 id="home-reviews-title" class="home-reviews-title">User Reviews</h2>
+            <div class="home-review-body">
+              <p>
+                The cleaning service was outstanding! Everything was spotless
+                and the staff was friendly.
+              </p>
+            </div>
 
-	  <div class="home-reviews-list">
-	   
-		<div class="home-review">
-		  <header class="home-review-head">
-			<div class="home-review-avatar" >👤</div>
-			<h3 class="home-review-name">Lama Alhammed</h3>
-		  </header>
+            <div class="home-review-rating">
+              <span>Rating</span>
+              <strong>5 / 5</strong>
+            </div>
+          </div>
 
-		  <div class="home-review-body">
-			<p>The cleaning service was outstanding! Everything was spotless and the staff was friendly.</p>
-		  </div>
+          <div class="home-review">
+            <header class="home-review-head">
+              <div class="home-review-avatar">👤</div>
+              <h3 class="home-review-name">Noora Alsaiar</h3>
+            </header>
 
-		  <div class="home-review-rating">
-			<span>Rating</span>
-			<strong>5 / 5</strong>
-		  </div>
-		</div>
+            <div class="home-review-body">
+              <p>
+                Excellent babysitting service. My kids were happy and
+                comfortable. I highly recommend it!
+              </p>
+            </div>
 
-		<div class="home-review">
-		  <header class="home-review-head">
-			<div class="home-review-avatar" >👤</div>
-			<h3 class="home-review-name">Noora Alsaiar</h3>
-		  </header>
+            <div class="home-review-rating">
+              <span>Rating</span>
+              <strong>4.5 / 5</strong>
+            </div>
+          </div>
 
-		  <div class="home-review-body">
-			<p>Excellent babysitting service. My kids were happy and comfortable. I highly recommend it!</p>
-		  </div>
+          <div class="home-review">
+            <header class="home-review-head">
+              <div class="home-review-avatar">👤</div>
+              <h3 class="home-review-name">Leen Almutairi</h3>
+            </header>
 
-		  <div class="home-review-rating">
-			<span>Rating</span>
-			<strong>4.5 / 5</strong>
-		  </div>
-		</div>
+            <div class="home-review-body">
+              <p>
+                Great moving team! They handled my furniture carefully and
+                completed everything on time.
+              </p>
+            </div>
 
-		<div class="home-review">
-		  <header class="home-review-head">
-			<div class="home-review-avatar" >👤</div>
-			<h3 class="home-review-name">Leen Almutairi</h3>
-		  </header>
+            <div class="home-review-rating">
+              <span>Rating</span>
+              <strong>4.8 / 5</strong>
+            </div>
+          </div>
+        </div>
+      </section>
 
-		  <div class="home-review-body">
-			<p>Great moving team! They handled my furniture carefully and completed everything on time.</p>
-		  </div>
+      <!--OUR Q/A SECTION -->
+      <section class="home-faq home-section">
+        <h2 id="home-faq-title" class="home-faq-title">FAQ</h2>
 
-		  <div class="home-review-rating">
-			<span>Rating</span>
-			<strong>4.8 / 5</strong>
-		  </div>
-		</div>
-	  </div>
-	</section>
+        <div class="home-faq-container">
+          <div class="home-faq-box">
+            <p class="home-faq-q">
+              <strong>Q:</strong> How can I contact customer support?
+            </p>
+            <p class="home-faq-a">
+              <strong>A:</strong> You can reach us by phone, WhatsApp, or email
+              anytime between 9 AM and 10 PM.
+            </p>
+          </div>
 
-	<!--OUR Q/A SECTION -->
-	<section class="home-faq home-section">
-	  <h2 id="home-faq-title" class="home-faq-title">FAQ</h2>
+          <div class="home-faq-box">
+            <p class="home-faq-q">
+              <strong>Q:</strong> Can I choose a specific worker for my booking?
+            </p>
+            <p class="home-faq-a">
+              <strong>A:</strong> Yes, you can pick your preferred worker when
+              submitting your service request.
+            </p>
+          </div>
 
-	  <div class="home-faq-container">
-		<div class="home-faq-box">
-		  <p class="home-faq-q"><strong>Q:</strong> How can I contact customer support?</p>
-		  <p class="home-faq-a"><strong>A:</strong> You can reach us by phone, WhatsApp, or email anytime between 9 AM and 10 PM.</p>
-		</div>
+          <div class="home-faq-box">
+            <p class="home-faq-q">
+              <strong>Q:</strong> Do you offer same-day service?
+            </p>
+            <p class="home-faq-a">
+              <strong>A:</strong> Yes, many services can be booked for the same
+              day depending on availability.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
 
-		<div class="home-faq-box">
-		  <p class="home-faq-q"><strong>Q:</strong> Can I choose a specific worker for my booking?</p>
-		  <p class="home-faq-a"><strong>A:</strong> Yes, you can pick your preferred worker when submitting your service request.</p>
-		</div>
+    <!--FOOTER-->
+    <footer>
+      <div class="footer-content">
+        <div class="contact-links">
+          <a href="tel:05XXXX" class="contact-btn call">
+            <i class="fas fa-phone-alt"></i>
+            <span>Call</span>
+          </a>
 
-		<div class="home-faq-box">
-		  <p class="home-faq-q"><strong>Q:</strong> Do you offer same-day service?</p>
-		  <p class="home-faq-a"><strong>A:</strong> Yes, many services can be booked for the same day depending on availability.</p>
-		</div>
-	  </div>
-	</section>
+          <a
+            href="https://wa.me/9665XXXXXXX"
+            target="_blank"
+            class="contact-btn whatsapp"
+          >
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
 
+          <a href="mailto:example@email.com" class="contact-btn gmail">
+            <i class="fas fa-envelope"></i>
+            <span>Gmail</span>
+          </a>
+        </div>
+      </div>
 
-	</main>
+      <div class="footer-bottom">
+        <p>© Copyright</p>
+      </div>
+    </footer>
 
-	  <!--FOOTER-->
-	  <footer>
-		<div class="footer-content">
-		  <div class="contact-links">
-			  <a href="tel:05XXXX" class="contact-btn call">
-				<i class="fas fa-phone-alt"></i>
-				<span>Call</span>
-			  </a>
-
-			  <a href="https://wa.me/9665XXXXXXX" target="_blank" class="contact-btn whatsapp">
-				<i class="fab fa-whatsapp"></i>
-				<span>WhatsApp</span>
-			  </a>
-
-			  <a href="mailto:example@email.com" class="contact-btn gmail">
-				<i class="fas fa-envelope"></i>
-				<span>Gmail</span>
-			  </a>
-			</div>
-		</div>
-
-		<div class="footer-bottom">
-		  <p>© Copyright</p>
-		</div>
-	  </footer>
-
-	</body>
+    <!-- JS -->
+    <script src="scripts.js"></script>
+  </body>
 </html>
