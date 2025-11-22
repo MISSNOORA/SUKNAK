@@ -11,7 +11,7 @@
 	  color: #333;
 	}
 
-	/*HEADER*/
+/* Header Section */
 	header {
 	  display: flex;
 	  flex-direction: column;
@@ -48,7 +48,7 @@
 	  object-fit: contain;
 	}
 	
-	/*NAV BAR*/
+/* Navigation Bar */
 nav {
   font-weight: 600;
   width: 100%;
@@ -115,21 +115,19 @@ nav a.active::after {
 @media (max-width: 768px) {
 
   nav ul {
-    flex-direction: column;     /* الروابط تحت بعض */
+    flex-direction: column;     
     gap: 12px;
     padding: 10px 0;
   }
 
   nav a {
-    width: 100%;                /* كل رابط يأخذ عرض كامل */
+    width: 100%;                
     text-align: center;
     padding: 10px 0;
   }
 }
 
-
-
-	/*FOOTER*/
+/* Footer Section */
 	footer {
 	  background-color: #2F4156;
 	  color: #F5EFEB;
@@ -164,7 +162,7 @@ nav a.active::after {
 	  color: #F5EFEB;
 	}
 	
-	/*CONTACT BUTTONS*/
+/* Contact Buttons */
 	.contact-links {
 	  display: flex;
 	  justify-content: center;
@@ -198,7 +196,6 @@ nav a.active::after {
 	  box-shadow: 0 0 20px currentColor; 
 	}
 
-
 	.call:hover {
 	  background: #007bff; 
 	  box-shadow: 0 0 25px #007bff;
@@ -219,7 +216,7 @@ nav a.active::after {
 	}
 	
 	
-	/*PROVIDER DASHBOARD*/
+/* Provider Dashboard */
 	
 	.provider-dashboard {
 	  padding: 40px;
@@ -260,7 +257,6 @@ nav a.active::after {
       color: #fff;
       transform: scale(1.05);
 	}
-
 
 	.provider-services-box {
 	  border: 2px solid #2F4156;
@@ -318,9 +314,8 @@ nav a.active::after {
 	  margin-bottom: 15px;
 	}
 
-
 	
-	/* ADD SERVICE FORM*/
+/* Add Service Form */
 	
 	.provider-Addservices-box {
 	  border: 2px solid #2F4156;
@@ -331,7 +326,6 @@ nav a.active::after {
 	  width: 90%;
 	  max-width: 1000px;
 	}
-
 
 	.provider-Addservices-box legend {
 	  font-size: 22px;
@@ -349,14 +343,12 @@ nav a.active::after {
       margin-bottom: 100px;
 	}
 
-
 	.form-group {
 	  flex: 1;
 	  min-width: 250px;
 	  display: flex;
 	  flex-direction: column;
 	}
-
 
 	label {
 	  font-weight: 600;
@@ -400,7 +392,7 @@ nav a.active::after {
 	}
 	
 	
-	/*STAFF LIST*/
+/* Staff List */
 	
 	.provider-Staff-box {
 	  border: 2px solid #2F4156;
@@ -476,7 +468,7 @@ nav a.active::after {
 	  cursor: pointer;
 	}
 	
-	/*DELETE CHECHED*/
+/* Delete Checked Items */
 	.delete-container {
 	  text-align: center;
 	  margin-top: 25px;
@@ -502,7 +494,7 @@ nav a.active::after {
 	  display: inline-block;
 	}
 	
-	/*ADD MEMBER FORM*/
+/* Add Member Form */
 	.add-member-container {
 	  text-align: center;
 	  margin-top: 25px;
@@ -538,7 +530,6 @@ nav a.active::after {
 	  box-shadow: none;
 	}
 
-
 	.M-about-form {
 	  width: 80%;
 	  max-width: 1000px;
@@ -558,14 +549,12 @@ nav a.active::after {
 	  padding: 0 15px;
 	}
 
-
 	.M-about-form form {
 	  display: grid;
 	  grid-template-columns: repeat(2, 1fr);
 	  gap: 35px 60px;
 	  margin-top: 25px;
 	}
-
 
 	.M-f {
 	  display: flex;
@@ -601,7 +590,6 @@ nav a.active::after {
 	  grid-column: span 2;
 	}
 
-
 	.M-f button {
 	  grid-column: span 2;
 	  justify-self: center;
@@ -631,14 +619,7 @@ nav a.active::after {
 	  }
 	}
 
-
-
-
-
-
-
-
-	/* USER EVALUTION FORM*/
+/* User Evaluation Form */
 	
 	.evaluate-title {
 	  font-size: 26px;
@@ -711,10 +692,9 @@ nav a.active::after {
 	  
 	}
 
-
 		
 		
-	/*USER DASHBOARD*/
+/* User Dashboard */
 		
 	.user-nav {
 		font-size:14px; 
@@ -784,10 +764,7 @@ nav a.active::after {
 	  transform: scale(1.05);
 	}
 
-
-
-
-	/*REQUEST SERVICE FORM */
+/* Request Service Form */
 	.request-container {
 	  width: 80%;
 	  max-width: 850px;
@@ -879,8 +856,7 @@ nav a.active::after {
 	  color:#2F4156;
 	}
 
-
-	/*ABOUT US PAGE*/
+/* About Us Page */
 
 	.about-strip {
 	  display: flex;
@@ -918,7 +894,6 @@ nav a.active::after {
 	  border: 2px solid #2F4156;
 	}
 
-
 	.center{ 
 		text-align: center;
 	}
@@ -939,8 +914,7 @@ nav a.active::after {
 	  padding: 0 10px;
 	}
 
-
-	/* JOIN TEAM FORM */
+/* Join Team Form */
 
 	.about-form {
 		background:#fff;
@@ -1004,15 +978,13 @@ nav a.active::after {
 		color:#2F4156; 
 		}
 
-	/* STAFF PROFILE TABLE*/
-
+/* Staff Profile Table */
 
 	main, .section { 
 		flex: 1 0 auto;
 		}
 	footer { 
 	margin-top: 36px; }       
-
 
 	.profile-card{
 	  max-width: 1100px;
@@ -1024,15 +996,12 @@ nav a.active::after {
 	  box-shadow: 0 8px 24px rgba(0,0,0,.06);
 	}
 
-
-
 	.profile-card .profile-matrix{
 	  width: 100%;
 	  border: 1px;              
 	  background: transparent;
 	  border-collapse: collapse;
 	}
-
 
 	.profile-matrix th,
 	.profile-matrix td{
@@ -1067,9 +1036,7 @@ nav a.active::after {
 	  background:#eee;
 	}
 
-
 	.profile-matrix  td{ background: #ffff; }
-
 
 	.v-name  { width:70px; }
 	.v-photo { width:210px; }
@@ -1079,9 +1046,8 @@ nav a.active::after {
 	.c-skill { width:300px; }
 	.c-edu   { width:300px; }
 
-
 	  
-	  /* ===== Home page ===== */
+/* Home Page */
 
 	.home-section {
 	  margin: 40px auto;
@@ -1091,7 +1057,7 @@ nav a.active::after {
 	  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 	}
 
-	/* HOMEPAGE*/
+/* Homepage Vision Section */
 	
 	.vision-section {
 	  position: relative;
@@ -1162,8 +1128,7 @@ nav a.active::after {
 	  }
 	}
 
-
-	/* HOMEPAGE SERVICES SECTION */
+/* Homepage Services Section */
 	.home-services {
 	  background-color: #F5EFEB; 
 	  padding: 40px 25px;
@@ -1176,7 +1141,6 @@ nav a.active::after {
 	  color: #2F4156; 
 	  margin-bottom: 24px;
 	}
-
 
 	.home-services-grid {
 	  display: flex;
@@ -1234,7 +1198,6 @@ nav a.active::after {
 	  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
 	}
 
-
 	.home-service-info {
 	  opacity: 0;
 	  transform: translateY(10px);
@@ -1263,7 +1226,7 @@ nav a.active::after {
 	  overflow:hidden;
 	}
 
-	/*HOMEPAGE REVIEW SECTION */
+/* Homepage Review Section */
 	.home-reviews {
 	  background: #F5EFEB; 
 	  padding: 40px 25px;
@@ -1356,8 +1319,7 @@ nav a.active::after {
 	  font-size: 14px;
 	}
 
-
-	/*HOMEPAGE Q/A SECTION*/
+/* Homepage FAQ Section */
 	.home-faq {
 	  background: #F5EFEB;
 	  padding: 35px 25px;
@@ -1411,7 +1373,7 @@ nav a.active::after {
 	
 	
 	
-	/* SERVICE PAGE*/
+/* Services Page */
 	.services-page {
 		background-color: #f9f9f9;
 		padding: 0 80px 50px;
@@ -1459,7 +1421,6 @@ nav a.active::after {
 		line-height: 1;
 		vertical-align: middle;
 	}
-
 
 	.services-grid {
 		display: grid;
@@ -1520,7 +1481,7 @@ nav a.active::after {
 		font-weight: 600;
 	}
 	
-/* ===== Responsive Images ===== */
+/* Responsive Images */
 .vision-image img,
 .home-service-img,
 .service-card img {
@@ -1528,10 +1489,10 @@ nav a.active::after {
   height: auto;
   display: block;
 }
-/* ===== Responsive Home Layout (small screens) ===== */
+/* Responsive Layout for Mobile */
 @media (max-width: 768px) {
 
-  /* الهوم سيكشن: تصغير المارجن */
+  
    .home-services {
     padding: 20px 12px;
   }
@@ -1539,7 +1500,7 @@ nav a.active::after {
     margin: 20px 10px;
   }
 
-  /* Our Services grid: تصير كارد تحت كارد */
+  
   .home-services-grid {
     display: flex;
     flex-direction: column;
@@ -1552,7 +1513,7 @@ nav a.active::after {
 	height: auto;  
   }
 
-  /* Reviews: الكروت تاخذ عرض أكبر وتصف تحت بعض */
+  
   .home-reviews-list {
     flex-direction: column;
     align-items: center;
@@ -1563,7 +1524,7 @@ nav a.active::after {
     max-width: 340px;
   }
 
-  /* FAQ: البوكسات تصير في عمود واحد */
+  
   .home-faq-container {
     flex-direction: column;
   }
@@ -1572,13 +1533,13 @@ nav a.active::after {
     flex: 1 1 100%;
   }
 
-  /* Vision section padding أخف في الجوال */
+  
   .vision-section {
     margin: 40px 10px;
     padding: 30px 20px;
   }
   .home-service-img {
-    height: auto;       /* يخلي الصورة تاخذ ارتفاع طبيعي */
+    height: auto;       
   }
 }
 .theme-btn {
@@ -1607,12 +1568,10 @@ body.dark-theme {
   color: #F5EFEB;
 }
 
-/* نصوص وروابط عامة */
 body.dark-theme a {
   color: #F5EFEB;
 }
 
-/* الهيدر + الناف + توب هيدر */
 body.dark-theme header,
 body.dark-theme nav,
 body.dark-theme .top-header {
@@ -1628,7 +1587,6 @@ body.dark-theme nav a::after {
   background-color: #F5EFEB;
 }
 
-/* الهوم: فيجن + سيكشنز عامة */
 body.dark-theme .vision-section {
   background: linear-gradient(135deg, #111827, #243447);
 }
@@ -1637,7 +1595,6 @@ body.dark-theme .home-section {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
-/* Our Services / Reviews / FAQ في الهوم */
 body.dark-theme .home-services,
 body.dark-theme .home-reviews,
 body.dark-theme .home-faq {
@@ -1651,12 +1608,10 @@ body.dark-theme .home-faq-box {
   border-color: #3b4a5a;
 }
 
-/* الخدمات في الهوم */
 body.dark-theme .home-service-card {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
 }
 
-/* FAQ النصوص */
 body.dark-theme .home-faq-q,
 body.dark-theme .home-faq-a,
 body.dark-theme .home-services-title,
@@ -1667,7 +1622,6 @@ body.dark-theme .vision-text p {
   color: #F5EFEB;
 }
 
-/* صفحة الخدمات */
 body.dark-theme .services-page {
   background-color: #1b2430;
 }
@@ -1685,7 +1639,6 @@ body.dark-theme .service-info {
   background: rgba(10, 16, 25, 0.95);
 }
 
-/* داشبورد المزود + صناديق المزود */
 body.dark-theme .provider-dashboard,
 body.dark-theme .provider-services-box,
 body.dark-theme .provider-Addservices-box,
@@ -1705,7 +1658,6 @@ body.dark-theme .staff-card {
   color: #F5EFEB;
 }
 
-/* فورم إضافة خدمة / فورم فريق / فورم join team */
 body.dark-theme .provider-Addservices-box,
 body.dark-theme .M-about-form,
 body.dark-theme .about-form,
@@ -1730,7 +1682,6 @@ body.dark-theme select {
   border-color: #C8D9E6;
 }
 
-/* أزرار عامة */
 body.dark-theme .provider-btn,
 body.dark-theme .provider-btn.active,
 body.dark-theme .delete-btn,
@@ -1759,12 +1710,10 @@ body.dark-theme .contact-btn:hover {
   color: #F5EFEB;
 }
 
-/* روابط التواصل في الفوتر */
 body.dark-theme .contact-btn {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* الفوتر */
 body.dark-theme footer {
   background-color: #000;
   color: #F5EFEB;
@@ -1772,4 +1721,276 @@ body.dark-theme footer {
 
 body.dark-theme .footer-bottom {
   border-top-color: #444;
+}
+
+body.dark-theme .user-table thead {
+  background-color: #243447 !important;
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .user-table thead th {
+  background-color: #243447 !important;
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .user-table tbody td {
+  color: #F5EFEB;
+  background-color: #1b2430;
+}
+
+body.dark-theme .user-table tbody tr {
+  border-color: #4b5a6a;
+}
+
+body.dark-theme select,
+body.dark-theme .sort-box select {
+  background-color: #243447 !important;
+  color: #F5EFEB !important;
+  border-color: #C8D9E6;
+}
+
+body.dark-theme select option {
+  background-color: #243447;
+  color: #F5EFEB;
+}
+
+body.dark-theme .services-title,
+body.dark-theme .home-services-title {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .sort-box label {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme legend,
+body.dark-theme .provider-services-box legend,
+body.dark-theme .provider-Addservices-box legend,
+body.dark-theme .provider-Staff-box legend {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme label {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .profile-matrix thead th {
+  background-color: #243447 !important;
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .profile-matrix tbody td,
+body.dark-theme .profile-matrix tbody th {
+  background-color: #1b2430;
+  color: #F5EFEB;
+  border-color: #4b5a6a;
+}
+
+body.dark-theme .user-nav {
+  background-color: #243447;
+  color: #F5EFEB;
+}
+
+body.dark-theme .staff-box {
+  background-color: #111827;
+  border-color: #4b5a6a;
+  color: #F5EFEB;
+}
+
+body.dark-theme .about-card,
+body.dark-theme .about-strip {
+  background-color: transparent;
+}
+
+body.dark-theme .about-name {
+  color: #C8D9E6 !important;
+}
+
+body.dark-theme .member-role {
+  color: #F5EFEB;
+}
+
+body.dark-theme .provider-service-card h3,
+body.dark-theme .provider-service-card p {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .staff-card h3,
+body.dark-theme .staff-info h3 {
+  color: #F5EFEB !important;
+  font-weight: 600;
+}
+
+body.dark-theme .staff-card p,
+body.dark-theme .staff-info p {
+  color: #C8D9E6 !important;
+}
+
+body.dark-theme .about-strip {
+  background-color: transparent;
+}
+
+body.dark-theme .about-card {
+  background-color: #1b2430 !important;
+  background: linear-gradient(135deg, #1b2430 0%, #243447 100%) !important;
+  border: 2px solid #4b5a6a !important;
+}
+
+body.dark-theme .about-text {
+  color: #F5EFEB;
+}
+
+body.dark-theme .about-name {
+  color: #F5EFEB !important;
+  font-weight: 700 !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+body.dark-theme .member-role {
+  color: #C8D9E6 !important;
+  font-weight: 500 !important;
+}
+
+body.dark-theme .staff-grid .staff-card {
+  background: linear-gradient(0deg, #243447 0%, #2d3748 70%);
+  border: 2px solid #4b5a6a;
+}
+
+body.dark-theme .staff-checkbox {
+  accent-color: #C8D9E6;
+}
+
+body.dark-theme .delete-btn {
+  background-color: #dc2626;
+  color: #fff;
+  border-color: #dc2626;
+}
+
+body.dark-theme .delete-btn:hover {
+  background-color: #991b1b;
+  color: #fff;
+}
+
+body.dark-theme .add-member-btn {
+  background-color: #2F4156;
+  color: #F5EFEB;
+  border: 2px solid #F5EFEB;
+}
+
+body.dark-theme .add-member-btn:hover {
+  background-color: #F5EFEB;
+  color: #2F4156;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: #2F4156;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover {
+  background-color: #C8D9E6;
+  color: #2F4156;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+#backToTop:active {
+  transform: translateY(-2px);
+}
+
+body.dark-theme #backToTop {
+  background-color: #C8D9E6;
+  color: #2F4156;
+}
+
+body.dark-theme #backToTop:hover {
+  background-color: #F5EFEB;
+  color: #2F4156;
+  box-shadow: 0 6px 16px rgba(200, 217, 230, 0.5);
+}
+
+@media (max-width: 768px) {
+  #backToTop {
+    width: 45px;
+    height: 45px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 20px;
+  }
+}
+
+.footer-clock {
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 10px;
+  border-top: 1px solid #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  color: #F5EFEB;
+  font-weight: 500;
+}
+
+.footer-clock i {
+  font-size: 18px;
+  color: #C8D9E6;
+}
+
+#realTimeClock {
+  font-family: 'Courier New', monospace;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #F5EFEB;
+}
+
+body.dark-theme .footer-clock {
+  border-top-color: #4b5a6a;
+  color: #F5EFEB;
+}
+
+body.dark-theme .footer-clock i {
+  color: #C8D9E6;
+}
+
+body.dark-theme #realTimeClock {
+  color: #C8D9E6;
+}
+
+@media (max-width: 768px) {
+  .footer-clock {
+    font-size: 14px;
+  }
+  
+  .footer-clock i {
+    font-size: 16px;
+  }
+  
+  #realTimeClock {
+    font-size: 15px;
+  }
 }
