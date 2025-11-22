@@ -48,68 +48,85 @@
 	  object-fit: contain;
 	}
 	
-	
 	/*NAV BAR*/
-	nav {
-	  font-weight: 600;
-	  width: 100%;
-	  background-color: #C8D9E6;
-      padding: 5px 0;
-      border-top: .5px solid #F5EFEB;
-	}
-
-	nav ul {
-	  list-style: none;
-	  display: flex;
-	  justify-content: space-evenly;
-	  width: 100%;
-	  align-items: center;
-	  gap: 40px;
-	  margin: 0;
-	  padding: 0;
-	}
-
-	/*NAV LINKS*/
-	nav a {
-	  position: relative;
-	  text-decoration: none;
-	  color: #2F4156;
-	  font-size: 16px;
-	  font-weight: 500;
-	  letter-spacing: 0.5px;
-	  padding: 8px 0;
-	  transition: color 0.3s ease;
-	}
-
-	
-	nav a::after {
-	  content: '';
-	  position: absolute;
-	  left: 0;
-	  bottom: 0;
-	  width: 0%;
-	  height: 2px;
-	  background-color: #2F4156;
-	  transition: width 0.3s ease;
-	}
-
-	
-	nav a:hover {
-	  color: #fff; 
-	}
-
-	nav a:hover::after {
-	  width: 100%;
-	}
-	
-	nav a.active {
-	  color: #fff;
-	}
-
-	nav a.active::after {
-	  width: 100%; 
-	  background-color: #2F4156; 
+nav {
+  font-weight: 600;
+  width: 100%;
+  background-color: #C8D9E6;
+  padding: 5px 0;
+  border-top: .5px solid #F5EFEB;
 }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAV LINKS */
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: #2F4156;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #2F4156;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a.active {
+  color: #fff;
+}
+
+nav a.active::after {
+  width: 100%;
+  background-color: #2F4156;
+}
+
+/* ====================================================== */
+/*              RESPONSIVE NAVIGATION (NEW)               */
+/* ====================================================== */
+
+@media (max-width: 768px) {
+
+  nav ul {
+    flex-direction: column;     /* الروابط تحت بعض */
+    gap: 12px;
+    padding: 10px 0;
+  }
+
+  nav a {
+    width: 100%;                /* كل رابط يأخذ عرض كامل */
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
 
 
 	/*FOOTER*/
@@ -1502,6 +1519,63 @@
 		color: #ffffff;
 		font-weight: 600;
 	}
+	
+/* ===== Responsive Images ===== */
+.vision-image img,
+.home-service-img,
+.service-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== Responsive Home Layout (small screens) ===== */
+@media (max-width: 768px) {
+
+  /* الهوم سيكشن: تصغير المارجن */
+  .home-section {
+    margin: 20px 10px;
+  }
+
+  /* Our Services grid: تصير كارد تحت كارد */
+  .home-services-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-service-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* Reviews: الكروت تاخذ عرض أكبر وتصف تحت بعض */
+  .home-reviews-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-review {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* FAQ: البوكسات تصير في عمود واحد */
+  .home-faq-container {
+    flex-direction: column;
+  }
+
+  .home-faq-box {
+    flex: 1 1 100%;
+  }
+
+  /* Vision section padding أخف في الجوال */
+  .vision-section {
+    margin: 40px 10px;
+    padding: 30px 20px;
+  }
+}
+
+
 
 
 
