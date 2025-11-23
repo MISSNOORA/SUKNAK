@@ -2073,8 +2073,8 @@ body.dark-theme .added-request-box {
   color: #F5EFEB !important;
   box-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
-/* ===== Sticky Footer ONLY for Leen's Pages ===== */
-.leen-pages {
+/* ===== fixing user dashboard pages ===== */
+.user-pages {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -2083,13 +2083,13 @@ body.dark-theme .added-request-box {
 }
 
 
-.leen-pages main {
+.user-pages main {
     flex: 1;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
 
 
-.leen-pages footer {
+.user-pages footer {
     margin-top: 0 !important;
 }
