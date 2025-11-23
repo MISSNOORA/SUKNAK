@@ -133,6 +133,7 @@ nav a.active::after {
 	  color: #F5EFEB;
 	  padding: 30px 0 15px;
 	  text-align: center;
+	  margin-top=0 !important;
 	}
 
 	.footer-content {
