@@ -1994,3 +1994,12 @@ body.dark-theme #realTimeClock {
     font-size: 15px;
   }
 }
+body.dark-theme h1.user-main {
+	color: #F5EFEB !important;
+}
+body.dark-theme h1.evaluate-title {
+	color: #F5EFEB !important;
+}
+body.dark-theme h1.request-form-title {
+	color: #F5EFEB !important;
+}
