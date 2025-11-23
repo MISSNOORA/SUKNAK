@@ -2003,3 +2003,69 @@ body.dark-theme h1.evaluate-title {
 body.dark-theme h1.request-form-title {
 	color: #F5EFEB !important;
 }
+/* ============================
+   Request Cards
+   ============================ */
+.all-requests-container {
+  width: 85%;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #f7f9fc;
+  border: 2px solid #dfe6ee;
+  border-radius: 12px;
+}
+
+
+.all-requests-container h2 {
+  text-align: center;
+  color: #2F4156;
+  margin-bottom: 20px;
+}
+
+
+
+.request-card {
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  padding: 18px 25px;
+  margin-bottom: 20px;
+  background: #fff;
+  font-size: 15px;
+  line-height: 1.6;
+  box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+}
+
+.request-card p {
+  margin: 4px 0;
+}
+
+.request-card strong {
+  color: #2F4156;
+}
+/* ===========================
+   DARK THEME – Request card
+   =========================== */
+
+body.dark-theme .all-requests-container {
+  background-color: #111827 !important;
+  border: 2px solid #4b5a6a !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+}
+
+body.dark-theme #your-requests-title {
+  color: #F5EFEB !important;
+}
+
+
+body.dark-theme #requests-list {
+  background-color: transparent !important;
+}
+
+
+body.dark-theme .added-request-box {
+  background: #1f2937 !important;
+  border: 1.5px solid #4b5a6a !important;
+  color: #F5EFEB !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}

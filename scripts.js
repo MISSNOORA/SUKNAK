@@ -153,3 +153,202 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+// ==========================
+// UserDashboard-request page
+// ==========================
+document.addEventListener("DOMContentLoaded", function () {
+  
+  const form = document.querySelector(".request-form");
+  const fullName = document.getElementById("fullname");
+  const date = document.getElementById("date");
+  const description = document.getElementById("request-description");
+  const service = document.getElementById("user-request-service");
+  const worker = document.getElementById("request-worker");
+  const requestList = document.getElementById("requests-list");
+
+  
+  const workersByService = {
+    "Home cleaning": ["Omar", "Lina"],
+    "Baby sitting": ["Sara", "Noor"],
+    "Garden maintenance": ["Faisal", "Hana"],
+    "Furniture moving": ["Khalid", "Rayan"],
+    "Private cook": ["Youssef", "Maha"],
+    "Home repair": ["Ali", "Fatimah"]
+  };
+
+  service.addEventListener("change", function () {
+    worker.innerHTML = '<option value="">Choose a worker</option>'; 
+
+    const selectedService = service.value;
+    const availableWorkers = workersByService[selectedService] || [];
+
+    availableWorkers.forEach(w => {
+      const option = document.createElement("option");
+      option.value = w;
+      option.textContent = w;
+      worker.appendChild(option);
+    });
+  });
+
+  
+  
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    let errors = [];
+
+    
+    const nameValue = fullName.value.trim();
+    const nameRegex = /^[A-Za-z ]+$/;
+
+    if (!nameValue.includes(" "))
+      errors.push("Full name must include first and last name.");
+
+    if (!nameRegex.test(nameValue))
+      errors.push("Full name must not contain numbers or symbols.");
+
+    
+    if (service.value === "")
+      errors.push("Please select a service.");
+
+    
+    if (worker.value === "")
+      errors.push("Please select a worker.");
+
+   
+    if (description.value.trim().length < 100)
+      errors.push("Description must be at least 100 characters.");
+
+   
+    let selected = new Date(date.value);
+    selected.setHours(0, 0, 0, 0);
+
+    let today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    let tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1);
+
+    
+    if (selected < today) {
+      errors.push("You cannot select a past date.");
+    }
+
+    
+    if (selected.getTime() === today.getTime()) {
+      errors.push("You cannot select today as the due date.");
+    }
+
+    
+    if (selected.getTime() === tomorrow.getTime()) {
+      errors.push("You cannot select tomorrow as the due date.");
+    }
+
+    
+    if (errors.length > 0) {
+      alert("Please fix the following:\n\n" + errors.join("\n"));
+      return;
+    }
+
+   
+    let userChoice = confirm(
+      "Request sent successfully!\n\nDo you want to stay on this page or return to the dashboard?"
+    );
+
+    if (userChoice) {
+  addRequestToPage(
+    fullName.value,
+    date.value,
+    description.value,
+    service.value,
+    worker.value
+  );
+} else {
+  window.location.href = "UserDashboard.html";
+}
+
+  });
+
+  
+  function addRequestToPage(fullname, date, description, service, worker) {
+    const container = document.getElementById("requests-list");
+
+    
+    const box = document.createElement("div");
+    box.classList.add("added-request-box");
+
+    
+    box.style.border = "1.5px solid #2F4156";
+    box.style.padding = "15px";
+    box.style.marginTop = "15px";
+    box.style.borderRadius = "8px";
+    box.style.fontSize = "15px";
+    box.style.backgroundColor = "#fff";
+
+    box.innerHTML = `
+        <p><strong>Service:</strong> ${service}</p>
+        <p><strong>Full Name:</strong> ${fullname}</p>
+        <p><strong>Due Date:</strong> ${date}</p>
+        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>Worker:</strong> ${worker}</p>
+    `;
+
+    
+    container.appendChild(box);
+
+  }
+
+});
+// ==========================
+// Evaluation Form 
+// ==========================
+document.addEventListener("DOMContentLoaded", function () {
+
+    const form = document.querySelector(".evaluation-form");
+    const service = document.getElementById("evaluation-service");
+    const rating = document.getElementById("evaluation-rating");
+    const feedback = document.getElementById("evaluation-feedback");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let errors = [];
+
+        
+        if (service.value === "") {
+            errors.push("Please select a service.");
+            service.style.border = "";
+        } 
+
+        
+        if (rating.value === "") {
+            errors.push("Please select a rating.");
+            rating.style.border = "";
+        }
+
+        
+        if (feedback.value.trim() === "") {
+            errors.push("Please enter your feedback.");
+		feedback.style.border = "";}
+        
+
+        
+        if (errors.length > 0) {
+            alert("Please fix the following:\n\n" + errors.join("\n"));
+            return;
+        }
+
+        
+        let goodRatings = ["⭐⭐⭐⭐⭐", "⭐⭐⭐⭐"]; 
+
+        if (goodRatings.includes(rating.value)) {
+            alert("Thank you! \n\nWe appreciate your positive feedback!");
+        } else {
+            alert("We’re sorry your experience wasn’t great \n\nWe will improve next time.");
+        }
+
+        
+        window.location.href = "UserDashboard.html";
+    });
+
+});
+
