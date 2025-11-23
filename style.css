@@ -2035,7 +2035,11 @@ body.dark-theme h1.request-form-title {
   line-height: 1.6;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
 }
-
+.added-request-box {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
 .request-card p {
   margin: 4px 0;
 }
