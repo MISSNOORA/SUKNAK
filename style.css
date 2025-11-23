@@ -133,7 +133,6 @@ nav a.active::after {
 	  color: #F5EFEB;
 	  padding: 30px 0 15px;
 	  text-align: center;
-	  margin-top=0 !important;
 	}
 
 	.footer-content {
@@ -2073,4 +2072,24 @@ body.dark-theme .added-request-box {
   border: 1.5px solid #4b5a6a !important;
   color: #F5EFEB !important;
   box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+}
+/* ===== Sticky Footer ONLY for Leen's Pages ===== */
+.leen-pages {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.leen-pages main {
+    flex: 1;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+
+.leen-pages footer {
+    margin-top: 0 !important;
 }
