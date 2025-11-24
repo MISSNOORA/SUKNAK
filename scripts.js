@@ -351,4 +351,83 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+// About Us - Join Our Team Form Validation
 
+function validateJoinForm() {
+  var fullName  = document.getElementById("FullName");
+  var email     = document.getElementById("email");
+  var dob       = document.getElementById("dob");
+  var expertise = document.getElementById("expertise");
+  var skills    = document.getElementById("skills");
+  var education = document.getElementById("education");
+  var photo     = document.getElementById("photo");
+  var message   = document.getElementById("message");
+
+
+  var errors = "";
+
+  
+  if (fullName.value == "") {
+    errors += "- Full Name cannot be empty.\n";
+  }
+  if (email.value == "") {
+    errors += "- Email cannot be empty.\n";
+  }
+  if (dob.value == "") {
+    errors += "- Date of Birth cannot be empty.\n";
+  }
+  if (expertise.value == "") {
+    errors += "- Area of Expertise cannot be empty.\n";
+  }
+  if (skills.value == "") {
+    errors += "- Skills cannot be empty.\n";
+  }
+  if (education.value == "") {
+    errors += "- Education cannot be empty.\n";
+  }
+  if (photo.value == "") {
+    errors += "- Please choose a photo.\n";
+  }
+
+ 
+  if (fullName.value != "" && fullName.value.search(/^[0-9]/) != -1) {
+    errors += "- Name cannot start with a number.\n";
+  }
+
+  if (photo.value != "" && photo.value.search(/\.(jpg|jpeg|png|gif)$/i) == -1) {
+    errors += "- Photo must be an image file (jpg, jpeg, png, gif).\n";
+  }
+
+  
+  if (dob.value != "") {
+    var dobDate = new Date(dob.value);
+    var year    = dobDate.getFullYear();
+    if (year > 2008) {
+      errors += "- Date of birth must be in 2008 or earlier.\n";
+    }
+  }
+
+  if (errors != "") {
+    alert("Please fix the following:\n\n" + errors);
+    return false;
+  }
+
+  
+  alert(
+    "Thank you, " + fullName.value +
+    "!\nYour request to join the team has been received."
+  );
+
+
+  fullName.value  = "";
+  email.value     = "";
+  dob.value       = "";
+  expertise.value = "";
+  skills.value    = "";
+  education.value = "";
+  photo.value     = "";
+  message.value   = "";
+
+  
+  return false;
+}
