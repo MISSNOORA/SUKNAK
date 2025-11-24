@@ -2003,9 +2003,7 @@ body.dark-theme h1.evaluate-title {
 body.dark-theme h1.request-form-title {
 	color: #F5EFEB !important;
 }
-/* ============================
-   Request Cards
-   ============================ */
+/* Request Cards */
 .all-requests-container {
   width: 85%;
   max-width: 900px;
@@ -2047,9 +2045,7 @@ body.dark-theme h1.request-form-title {
 .request-card strong {
   color: #2F4156;
 }
-/* ===========================
-   DARK THEME – Request card
-   =========================== */
+/* Dark Theme – Request card */
 
 body.dark-theme .all-requests-container {
   background-color: #111827 !important;
@@ -2073,7 +2069,7 @@ body.dark-theme .added-request-box {
   color: #F5EFEB !important;
   box-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
-/* ===== fixing user dashboard pages ===== */
+/* ===== Fixing User Dashboard Pages ===== */
 .user-pages {
     display: flex;
     flex-direction: column;
