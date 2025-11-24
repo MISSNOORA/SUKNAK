@@ -2139,22 +2139,160 @@ body.dark-theme .added-request-box {
   box-shadow: 0 3px 8px rgba(0,0,0,0.5);
 }
 /* ===== Fixing User Dashboard Pages ===== */
+
+/* Make all images responsive */
+.user-pages img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Improve text readability */
+.user-pages p,
+.user-pages label,
+.user-pages td,
+.user-pages th {
+    line-height: 1.5;
+}
+
+/* Better keyboard focus (Accessibility) */
+.user-pages input:focus,
+.user-pages select:focus,
+.user-pages textarea:focus,
+.user-pages button:focus,
+.user-pages a:focus {
+    outline: none;
+	border-color: #2F4156;
+	box-shadow: 0 0 4px rgba(47,65,86,0.4);
+}
+
+/* FIX FOOTER */
+
 .user-pages {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
 }
-
 
 .user-pages main {
-    flex: 1;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+    flex: 1; /* Pushes footer down always */
 }
 
+/* TABLE RESPONSIVENESS */
 
-.user-pages footer {
-    margin-top: 0 !important;
+.user-pages table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Smaller font in very small screens */
+@media (max-width: 450px) {
+    .user-pages table th,
+    .user-pages table td {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
+
+/* FORM RESPONSIVENESS (Request + Evaluation Forms) */
+
+.user-pages .request-form-row {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+}
+
+/* Stack inputs on mobile */
+@media (max-width: 768px) {
+    .user-pages .request-form-row {
+        flex-direction: column;
+    }
+
+    .user-pages .request-form-group {
+        width: 100%;
+    }
+
+    .user-pages textarea {
+        min-height: 100px;
+    }
+}
+
+/* Form containers */
+.evaluation-container {
+    width: 50%;
+    max-width: 475px;
+	margin: 0 auto 40px auto;
+	
+}
+
+@media (max-width: 600px) {
+    .user-pages .request-container,
+    .user-pages .evaluation-container {
+        width: 95%;
+        padding: 20px;
+		max-width: none;
+    }
+}
+
+/* BUTTON INTERACTION */
+
+.user-pages button,
+.user-pages .user-btn {
+    transition: 0.25s ease-in-out;
+}
+
+.user-pages button:hover,
+.user-pages .user-btn:hover {
+    transform: scale(1.05);
+}
+
+/* HEADER + NAV RESPONSIVE */
+
+@media (max-width: 650px) {
+    .top-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
+    }
+}
+
+/* BUTTON BLOCK RESPONSIVE (User Buttons) */
+
+@media (max-width: 600px) {
+    .user-pages .user-buttons {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* SKIP LINK (Accessibility) — invisible visually */
+
+.skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+
+.skip-to-content:focus {
+    left: 15px;
+    top: 15px;
+    background: #2F4156;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 6px;
+    z-index: 1000;
 }
