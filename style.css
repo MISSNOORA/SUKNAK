@@ -109,7 +109,7 @@ nav a.active::after {
 }
 
 /* ====================================================== */
-/*              RESPONSIVE NAVIGATION (NEW)               */
+/*              RESPONSIVE NAVIGATION              */
 /* ====================================================== */
 
 @media (max-width: 768px) {
@@ -313,6 +313,21 @@ nav a.active::after {
 	  color: #555;
 	  margin-bottom: 15px;
 	}
+	
+		@media (max-width: 768px) {
+		  .provider-top-buttons {
+			flex-direction: column;      
+			gap: 15px;                    
+		  }
+
+		  .provider-btn {
+			width: 80%;              
+			max-width: 300px;        
+			margin: 0 auto; 
+			font-size: 14px;
+			padding: 12px 20px;
+		  }
+	}
 
 	
 /* Add Service Form */
@@ -467,6 +482,33 @@ nav a.active::after {
 	  accent-color: #2F4156;
 	  cursor: pointer;
 	}
+
+/* ---- Mobile Vertical Scroll Layout ---- */
+@media (max-width: 768px) {
+
+  /* Make the fieldset scroll vertically */
+  .provider-Staff-box {
+    max-height: 500px;     /* يظهر 3 كروت */
+    overflow-y: auto;      /* سكرول عمودي */
+    padding-right: 10px;
+  }
+
+  /* Stack cards vertically */
+  .staff-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  /* Make each card full width */
+  .staff-card {
+    width: 100% !important;
+    flex: none !important;
+  }
+}
+
+
+
 	
 /* Delete Checked Items */
 	.delete-container {
@@ -617,6 +659,8 @@ nav a.active::after {
 	  .M-f button {
 		width: 100%;
 	  }
+	  
+	  
 	}
 
 /* User Evaluation Form */

@@ -43,120 +43,23 @@
 			<div class="add-member-container">
 				<a href="#add-member-section" class="add-member-btn">Add A Member</a>
 			</div>
-			<div class="staff-grid">
 			
+			
+			<div class="staff-grid" id="staff-container"></div>
+			<template id="staff-template">
 				<div class="staff-card">
-					<img src="images/Staff/clean1.png" alt="Omar">
+					<img src="" alt="" class="staff-photo">
 					<div class="staff-info">
-					  <h3>Omar</h3>
-					  <p>Home Cleaning</p>
+						<h3 class="staff-name"></h3>
+						<p class="staff-job"></p>
 					</div>
-					<input type="checkbox" class="staff-checkbox" name="staff" value="Omar">
+					<input type="checkbox" class="staff-checkbox">
 				</div>
-
-				<div class="staff-card">
-					<img src="images/Staff/Baby-1.png" alt="Sara">
-					<div class="staff-info">
-					  <h3>Sara</h3>
-					  <p>Baby Sitting</p>
-					</div>
-					<input type="checkbox" class="staff-checkbox" name="staff" value="Sara">
-				</div>
-				
-				<div class="staff-card">
-					<img src="images/Staff/clean2.png" alt="Lina">
-					<div class="staff-info">
-					  <h3>Lina</h3>
-					  <p>Home Cleaning</p>
-					</div>
-					<input type="checkbox" class="staff-checkbox" name="staff" value="Lina">
-				</div>
-				
-				<div class="staff-card">
-					<img src="images/Staff1/babysitting2.png" alt="Noor">
-					<div class="staff-info">
-					  <h3>Noor</h3>
-					  <p>Baby Sitting</p>
-					</div>
-					<input type="checkbox" class="staff-checkbox" name="staff" value="Noor">
-				</div>
-				
-				<div class="staff-card">
-					<img src="images/Staff/Garden-1.png" alt="Faisal">
-					<div class="staff-info">
-					  <h3>Faisal</h3>
-					  <p>Garden Maintenance</p>
-					</div>
-					<input type="checkbox" class="staff-checkbox" name="staff" value="Faisal">
-				</div>
-
-
-				<div class="staff-card">
-				  <img src="images/Staff1/garden2.png" alt="Hana">
-				  <div class="staff-info">
-					<h3>Hana</h3>
-					<p>Garden Maintenance</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Hana">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff/Moving-1.png" alt="Khalid" >
-				  <div class="staff-info">
-					<h3>Khalid</h3>
-					<p>Furniture Moving</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Khalid">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff1/moving2.png" alt="Rayan">
-				  <div class="staff-info">
-					<h3>Rayan</h3>
-					<p>Furniture Moving</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Rayan">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff/Chef-1.png" alt="Youssef" >
-				  <div class="staff-info">
-					<h3>Youssef</h3>
-					<p>Private Chef</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Youssef">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff1/chef2.png" alt="Maha">
-				  <div class="staff-info">
-					<h3>Maha</h3>
-					<p>Private Chef</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Maha">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff/Repair-1.png" alt="Ali" >
-				  <div class="staff-info">
-					<h3>Ali</h3>
-					<p>Home Repair</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Ali">
-				</div>
-				
-				<div class="staff-card">
-				  <img src="images/Staff1/repair2.png" alt="Fatimah">
-				  <div class="staff-info">
-					<h3>Fatimah</h3>
-					<p>Home Repair</p>
-				  </div>
-				  <input type="checkbox" class="staff-checkbox" name="staff" value="Fatimah">
-				</div>
-			  </div>
+			</template>
+			
 			  
 			  <div class="delete-container">
-				<button type="button" class="delete-btn">🗑️ Delete Selected</button>
+				<button type="button" class="delete-btn">Delete Selected</button>
 			  </div>
 			  
 			  
@@ -168,7 +71,7 @@
         <fieldset class="M-about-form">
           <legend>ADD A MEMBER</legend>
 
-          <form class="M-form-inner" action="#" method="post" enctype="multipart/form-data">
+          <form class="M-form-inner" onsubmit="addNewMember(event)">
             <div class="M-f">
               <label for="FullName">Full Name</label>
               <input id="FullName" name="FullName" type="text" placeholder="Your Name" required >
@@ -210,7 +113,7 @@
             </div>
 
             <div class="M-f">
-              <button type="submit" class="btn">Join</button>
+              <button type="submit" class="btn">ADD</button>
             </div>
           </form>
         </fieldset>
