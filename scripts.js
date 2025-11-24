@@ -310,34 +310,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener("submit", function (e) {
         e.preventDefault();
-
-        let errors = [];
-
-        
-        if (service.value === "") {
-            errors.push("Please select a service.");
-            service.style.border = "";
-        } 
-
-        
-        if (rating.value === "") {
-            errors.push("Please select a rating.");
-            rating.style.border = "";
-        }
-
-        
-        if (feedback.value.trim() === "") {
-            errors.push("Please enter your feedback.");
-		feedback.style.border = "";}
-        
-
-        
-        if (errors.length > 0) {
-            alert("Please fix the following:\n\n" + errors.join("\n"));
-            return;
-        }
-
-        
         let goodRatings = ["⭐⭐⭐⭐⭐", "⭐⭐⭐⭐"]; 
 
         if (goodRatings.includes(rating.value)) {

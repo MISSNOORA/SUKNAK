@@ -39,7 +39,7 @@
 	<h1 class="evaluate-title">Service Evaluation</h1>
       <form class="evaluation-form" action="#" method="post">
         <label for="evaluation-service">Your previous requests</label>
-        <select id="evaluation-service" name="service">
+        <select id="evaluation-service" name="service" required>
           <option value="">Select a service</option>
           <option>Home Cleaning(12/10/2025)</option>
           <option>baby sitting(10/10/2025)</option>
@@ -47,7 +47,7 @@
         </select>
 
         <label for="evaluation-rating">Rating</label>
-        <select id="evaluation-rating" name="rating">
+        <select id="evaluation-rating" name="rating" required>
           <option value="">Select a rating</option>
           <option>⭐</option>
           <option>⭐⭐</option>
@@ -57,7 +57,7 @@
         </select>
 
         <label for="evaluation-feedback">Feedback</label>
-        <textarea id="evaluation-feedback" name="feedback" placeholder="Add text"></textarea>
+        <textarea id="evaluation-feedback" name="feedback" placeholder="Add text" required></textarea>
 
         <button type="Submit">Submit</button>
       </form>
