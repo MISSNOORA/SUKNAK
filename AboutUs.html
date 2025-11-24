@@ -156,7 +156,7 @@
         <fieldset class="about-form">
           <legend>Join Our Team</legend>
 
-          <form class="about-form" action="#" method="post" enctype="multipart/form-data">
+        <form id="joinForm" class="about-form" action="#" method="post" enctype="multipart/form-data"onsubmit="return validateJoinForm();">
             <div class="f">
               <label for="FullName">Full Name</label>
               <input id="FullName" name="FullName" type="text" placeholder="Your Name" required >
@@ -192,14 +192,16 @@
               <input id="photo" name="photo" type="file" accept="image/*" required >
             </div>
 
-            <div class="f">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="3" placeholder="Write a short message"></textarea>
-            </div>
+           <div class="f message-row">
+           <label for="message">Message</label>
+           <textarea id="message" name="message" rows="3" placeholder="Write a short message"></textarea>
+          </div>
 
-            <div class="f">
-              <button type="submit" class="btn">Join</button>
-            </div>
+
+          <div class="f button-row">
+          <button type="submit" class="btn">Join</button>
+          </div>
+
           </form>
         </fieldset>
       </section>
