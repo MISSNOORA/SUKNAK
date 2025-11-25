@@ -134,143 +134,62 @@ nav a.active::after {
   width: 100%;
   background-color: #2F4156;
 }
-/* ====================================================== */
-/*              RESPONSIVE NAVIGATION              */
-/* ====================================================== */
 
-/* Mobile Select Menu - مخفي افتراضياً */
-.mobile-nav {
-  display: none;
-  width: 100%;
-  padding: 10px 20px;
-  background-color: #C8D9E6;
-  border-top: 0.5px solid #F5EFEB;
-}
+/* ====================================
+   MOBILE SELECT MENU
+   ==================================== */
 
-.mobile-nav select {
+.mobile-nav-select {
+  display: none; /* مخفي في الديسكتوب */
   width: 100%;
-  padding: 12px 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #2F4156;
-  background-color: #F5EFEB;
+  max-width: 200px;
+  padding: 8px 12px;
   border: 2px solid #2F4156;
   border-radius: 8px;
+  background-color: #fff;
+  color: #2F4156;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
 }
 
-.mobile-nav select:hover {
-  background-color: #2F4156;
-  color: #F5EFEB;
+.mobile-nav-select:hover {
+  border-color: #50657C;
 }
 
-.mobile-nav select:focus {
-  border-color: #2F4156;
-  box-shadow: 0 0 5px rgba(47, 65, 86, 0.3);
+/* DESKTOP NAV - يظهر في الديسكتوب فقط */
+.desktop-nav {
+  display: block;
 }
 
-/* ============================================ */
-/*        DARK MODE للسلكت منيو           */
-/* ============================================ */
+/* ====================================
+   RESPONSIVE: MOBILE
+   ==================================== */
 
-body.dark-theme .mobile-nav {
-  background-color: #111827;
-  border-top: 0.5px solid #4b5a6a;
-}
-
-body.dark-theme .mobile-nav select {
-  background-color: #1b2430;
-  color: #F5EFEB;
-  border-color: #F5EFEB;
-}
-
-body.dark-theme .mobile-nav select:hover {
-  background-color: #F5EFEB;
-  color: #2F4156;
-}
-
-body.dark-theme .mobile-nav select:focus {
-  border-color: #C8D9E6;
-  box-shadow: 0 0 5px rgba(200, 217, 230, 0.5);
-}
-
-body.dark-theme .mobile-nav select option {
-  background-color: #1b2430;
-  color: #F5EFEB;
-}
-
-/* Desktop/Laptop - شاشات كبيرة */
-@media (min-width: 769px) {
-  .top-header {
-    display: grid;
-    grid-template-columns: 80px 1fr auto;
-    align-items: center;
-    gap: 30px;
-    padding: 15px 60px;
-  }
+@media (max-width: 768px) {
   
-  .logo {
-    width: 80px;
-    height: 80px;
-    justify-self: start;
-  }
-  
-  .logoTitle {
-    width: 180px;
-    justify-self: center;
-    position: static;
-    transform: none;
-  }
-  
-  .theme-btn {
-    justify-self: end;
-  }
-  
-  /* اظهر القائمة العادية */
+  /* إخفاء النافبار العادي */
   .desktop-nav {
-    display: block !important;
-  }
-  
-  nav.desktop-nav {
-    font-weight: 600;
-    width: 100%;
-    background-color: #C8D9E6;
-    padding: 5px 0;
-    border-top: 0.5px solid #F5EFEB;
-  }
-  
-  nav.desktop-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
-    align-items: center;
-    gap: 40px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* اخفي السلكت منيو */
-  .mobile-nav {
     display: none !important;
   }
-}
-
-/* Dark Theme للـ Desktop Nav */
-body.dark-theme nav.desktop-nav {
-  background-color: #111827;
-  border-top: 0.5px solid #4b5a6a;
-}
-
-/* Tablet and Mobile */
-@media (max-width: 768px) {
+  
+  /* إظهار السلكت منيو */
+  .mobile-nav-select {
+    display: block;
+    grid-column: 1 / -1; /* ياخذ كامل العرض */
+    grid-row: 2;
+    justify-self: center;
+    margin-top: 10px;
+  }
+  
   .top-header {
     padding: 15px 20px;
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 15px;
+    grid-template-rows: auto auto;
+    gap: 10px;
     align-items: center;
   }
   
@@ -288,48 +207,22 @@ body.dark-theme nav.desktop-nav {
   
   .logoTitle {
     width: 120px;
-    position: static;
-    transform: none;
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
   }
-
-  /* اخفي القائمة العادية */
-  .desktop-nav {
-    display: none !important;
-  }
-  
-  /* اظهر السلكت منيو */
-  .mobile-nav {
-    display: block !important;
-  }
 }
 
-/* Mobile Small Screens */
-@media (max-width: 480px) {
-  .top-header {
-    padding: 10px 15px;
-    gap: 8px;
-  }
-  
-  .logoTitle {
-    width: 100px;
-  }
-  
-  .theme-btn {
-    font-size: 11px;
-    padding: 6px 12px;
-  }
-  
-  .mobile-nav {
-    padding: 10px 15px;
-  }
-  
-  .mobile-nav select {
-    font-size: 15px;
-    padding: 10px 12px;
-  }
+/* DARK THEME - SELECT MENU */
+body.dark-theme .mobile-nav-select {
+  background-color: #243447;
+  color: #F5EFEB;
+  border-color: #C8D9E6;
+}
+
+body.dark-theme .mobile-nav-select option {
+  background-color: #243447;
+  color: #F5EFEB;
 }
 /* Footer Section */
 	footer {
