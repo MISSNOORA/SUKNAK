@@ -85,6 +85,44 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update clock every second
   updateClock();
   setInterval(updateClock, 1000);
+  // ============================
+  // Hamburger Menu (Mobile)
+  // ============================
+  const hamburgerBtn = document.querySelector('.hamburger');
+  const navMenu = document.querySelector('nav ul');
+
+  if (hamburgerBtn && navMenu) {
+    hamburgerBtn.addEventListener('click', function () {
+      navMenu.classList.toggle('active');
+
+      const icon = hamburgerBtn.querySelector('i');
+      if (!icon) return;
+
+      if (navMenu.classList.contains('active')) {
+        // القائمة مفتوحة -> خلي الأيقونة X
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+      } else {
+        // القائمة مسكرة -> رجّعها bars
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+      }
+    });
+
+    // اختياري: سكّر المنيو إذا ضغط المستخدم على أي رابط من القائمة بالجوال
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768 && navMenu.classList.contains('active')) {
+          navMenu.classList.remove('active');
+          const icon = hamburgerBtn.querySelector('i');
+          if (icon) {
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+          }
+        }
+      });
+    });
+  }
 
   // Services Page Sorting
   const servicesGrid = document.querySelector('.services-grid');
@@ -813,6 +851,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (addMemberBtn) addMemberBtn.addEventListener("click", addNewMember);
 
 });
+
 
 
 
