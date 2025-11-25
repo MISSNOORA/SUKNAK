@@ -3,7 +3,12 @@
 	<head>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Provider Dashboard</title>
+	  <title>Suknak - Add Service</title>
+	  
+	  <!-- CSS -->
+	  <link rel="stylesheet" href="style.css">
+	  <!-- Icons -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
 	<body>
 
@@ -12,12 +17,13 @@
 		<div class="top-header">
 		  <img src="images/Logo.png" alt="Website Logo" class="logo">
 		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
-		  <link rel="stylesheet" href="style.css">
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+		  
+		  <!-- THEME BUTTON -->
+		  <button id="themeToggle" class="theme-btn">Dark Theme</button>
 		</div>
 
-		<!--NAV BAR -->
-		<nav>
+		<!-- Navigation للابتوب فقط -->
+		<nav class="desktop-nav">
 		  <ul>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="UserDashboard.html">User</a></li>
@@ -26,6 +32,18 @@
 			<li><a href="AboutUs.html">About Us</a></li>
 		  </ul>	
 		</nav>
+
+		<!-- Select Menu للجوال فقط -->
+		<div class="mobile-nav">
+		  <select id="mobileMenu" onchange="if(this.value) location = this.value;">
+			<option value="">☰ Menu</option>
+			<option value="index.html">Home</option>
+			<option value="UserDashboard.html">User</option>
+			<option value="Services.html">Services</option>
+			<option value="ProviderDashboard.html" selected>Provider</option>
+			<option value="AboutUs.html">About Us</option>
+		  </select>
+		</div>
 	  </header>
 	  
 	  
@@ -89,17 +107,20 @@
 				<span>WhatsApp</span>
 			  </a>
 
-			  <a href="mailto:example@email.com" class="contact-btn gmail">
+			  <a href="/cdn-cgi/l/email-protection#6b0e130a061b070e2b0e060a020745080406" class="contact-btn gmail">
 				<i class="fas fa-envelope"></i>
 				<span>Gmail</span>
 			  </a>
 			</div>
 		</div>
 
+		<div class="footer-clock">
+		  <i class="fas fa-clock"></i>
+		  <span id="realTimeClock"></span>
+		</div>
+
 		<div class="footer-bottom">
 		  <p>© Copyright</p>
 		</div>
 	  </footer>
-<script src="scripts.js"></script>
-	</body>
-</html>
+<script data
