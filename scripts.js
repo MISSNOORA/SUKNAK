@@ -1,3 +1,22 @@
+// ============================
+// MOBILE SELECT MENU NAVIGATION
+// ============================
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+  const mobileNavSelect = document.getElementById("mobileNavSelect");
+  
+  if (mobileNavSelect) {
+    mobileNavSelect.addEventListener("change", function() {
+      const selectedPage = this.value;
+      
+      if (selectedPage) {
+        window.location.href = selectedPage;
+      }
+    });
+  }
+  
+});
 document.addEventListener("DOMContentLoaded", function () {
   // Load saved theme from localStorage
   const savedTheme = localStorage.getItem("theme");
@@ -86,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateClock();
   setInterval(updateClock, 1000);
  
+
   // Services Page Sorting
   const servicesGrid = document.querySelector('.services-grid');
   const sortSelect = document.getElementById('sort');
