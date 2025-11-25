@@ -25,28 +25,55 @@
 	}
 
 	.top-header {
-	  display: grid;
-      grid-template-columns: 1fr auto 1fr;    
-	  width: 100%;  
-      display: flex;
-      align-items: center;
-      padding: 15px 40px;
-	  gap: 450px;
-	}
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  width: 100%;  
+  padding: 15px 40px;
+  gap: 20px;
+}
 
-	.logo {
-	  justify-self: start;
-	  width: 80px;
-	  height: 80px;
-	  object-fit: contain;
-	}
-	
-	.logoTitle {
-	  justify-self: center;
-	  width: 160px; 
-	  height: auto;
-	  object-fit: contain;
-	}
+.logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
+  justify-self: start;  /* 👈 مهم */
+}
+
+.logoTitle {
+  width: 160px; 
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  justify-self: center;  /* 👈 مهم */
+  position: static;      /* 👈 ازلنا absolute */
+  transform: none;       /* 👈 ازلنا transform */
+}
+
+.theme-btn {
+  justify-self: end;  /* 👈 مهم */
+}
+
+/* Theme Button */
+.theme-btn {
+  padding: 8px 20px;
+  background-color: #2F4156;
+  color: #F5EFEB;
+  border: 2px solid #2F4156;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.theme-btn:hover {
+  background-color: #F5EFEB;
+  color: #2F4156;
+  transform: scale(1.05);
+}
 	
 /* Navigation Bar */
 nav {
@@ -107,12 +134,51 @@ nav a.active::after {
   width: 100%;
   background-color: #2F4156;
 }
-
 /* ====================================================== */
 /*              RESPONSIVE NAVIGATION              */
 /* ====================================================== */
 
+/* Tablet and Mobile */
 @media (max-width: 768px) {
+  .top-header {
+    padding: 15px 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;  /* 👈 عمودين */
+    grid-template-rows: auto auto;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .logo {
+    display: none;
+  }
+  
+  .theme-btn {
+    font-size: 12px;
+    padding: 6px 15px;
+    grid-column: 1;  /* 👈 العمود الأول (يسار) */
+    grid-row: 1;
+    justify-self: start;  /* 👈 يسار */
+  }
+  
+  .logoTitle {
+    width: 120px;
+    position: static;
+    transform: none;
+    grid-column: 2;  /* 👈 العمود الثاني (يمين) */
+    grid-row: 1;
+    justify-self: end;  /* 👈 يمين */
+  }
+  /* الهامبرقر على اليمين */
+  .hamburger {
+    display: block;
+    order: 3;
+    font-size: 28px;
+    color: #2F4156;
+    cursor: pointer;
+    margin-right: 0;
+  }
+}
 
   nav ul {
     flex-direction: column;     
@@ -127,6 +193,35 @@ nav a.active::after {
   }
 }
 
+/* Mobile Small Screens */
+@media (max-width: 480px) {
+  .top-header {
+    padding: 10px 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+    min-height: 70px;
+  }
+  
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .logoTitle {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .theme-btn {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
 /* Footer Section */
 	footer {
 	  background-color: #2F4156;
@@ -163,58 +258,99 @@ nav a.active::after {
 	}
 	
 /* Contact Buttons */
-	.contact-links {
-	  display: flex;
-	  justify-content: center;
-	  gap: 25px;
-	  margin-top: 25px;
-	  flex-wrap: wrap;
-	}
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
 
-	.contact-btn {
-	  background: #F5EFEB;
-	  color: #000;
-	  text-decoration: none;
-	  display: flex;
-	  align-items: center;
-	  gap: 10px;
-	  padding: 10px 18px;
-	  border-radius: 12px;
-	  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-	  font-weight: 500;
-	  transition: all 0.4s ease;
-	}
+.contact-btn {
+  background: #F5EFEB;
+  color: #000;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-weight: 500;
+  transition: all 0.4s ease;
+  min-width: 120px;
+  justify-content: center;
+}
 
-	.contact-btn i {
-	  font-size: 18px;
-	  transition: all 0.4s ease;
-	}
+.contact-btn i {
+  font-size: 18px;
+  transition: all 0.4s ease;
+}
 
-	.contact-btn:hover {
-	  color: #fff;
-	  transform: translateY(-3px);
-	  box-shadow: 0 0 20px currentColor; 
-	}
+.contact-btn:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px currentColor; 
+}
 
-	.call:hover {
-	  background: #007bff; 
-	  box-shadow: 0 0 25px #007bff;
-	}
+.call:hover {
+  background: #007bff; 
+  box-shadow: 0 0 25px #007bff;
+}
 
-	.whatsapp:hover {
-	  background: #25D366;
-	  box-shadow: 0 0 25px #25D366;
-	}
+.whatsapp:hover {
+  background: #25D366;
+  box-shadow: 0 0 25px #25D366;
+}
 
-	.gmail:hover {
-	  background: #EA4335; 
-	  box-shadow: 0 0 25px #EA4335;
-	}
+.gmail:hover {
+  background: #EA4335; 
+  box-shadow: 0 0 25px #EA4335;
+}
 
-	.contact-btn span {
-	  font-size: 14px;
-	}
-	
+.contact-btn span {
+  font-size: 14px;
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+  footer {
+    padding: 25px 15px 15px;
+  }
+  
+  .contact-links {
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .contact-btn {
+    padding: 10px 15px;
+    min-width: 100px;
+    font-size: 13px;
+  }
+  
+  .contact-btn i {
+    font-size: 16px;
+  }
+  
+  .contact-btn span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .contact-btn {
+    width: 90%;
+    max-width: 250px;
+    padding: 12px 20px;
+  }
+}
 	
 /* Provider Dashboard */
 	
@@ -2009,6 +2145,45 @@ body.dark-theme #backToTop:hover {
     font-size: 20px;
   }
 }
+/* Dark Theme - User Reviews */
+body.dark-theme .home-reviews-title {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .home-review {
+  background-color: #1b2430 !important;
+  border: 2px solid #4b5a6a;
+}
+
+body.dark-theme .home-review-head {
+  background-color: #243447;
+}
+
+body.dark-theme .home-review-name {
+  color: #F5EFEB !important;
+}
+
+body.dark-theme .home-review-body p {
+  color: #C8D9E6 !important;
+}
+
+body.dark-theme .home-review-rating {
+  color: #F5EFEB !important;
+  border-top: 1px solid #4b5a6a;
+}
+
+body.dark-theme .home-review-rating strong {
+  color: #C8D9E6 !important;
+}
+
+body.dark-theme .home-review-avatar {
+  background-color: #2F4156;
+  color: #F5EFEB;
+}
+/* Dark Theme - FAQ Container */
+body.dark-theme .home-faq-container {
+  background-color: transparent !important;
+}
 
 .footer-clock {
   text-align: center;
@@ -2295,4 +2470,149 @@ body.dark-theme .added-request-box {
     padding: 10px 15px;
     border-radius: 6px;
     z-index: 1000;
+}/* ============================
+   HAMBURGER MENU
+   ============================ */
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #2F4156;
+}
+
+/* يظهر الهامبرقر في الشاشات الصغيرة فقط */
+@media (max-width: 768px) {
+  .top-header {
+    padding: 15px 20px;
+    gap: 15px;
+    position: relative; /* عشان الأيقونة تتثبت صح */
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 25px;
+    z-index: 1100;
+  }
+
+  nav ul {
+    display: none;                /* مخفي افتراضياً */
+    flex-direction: column;
+    background-color: #C8D9E6;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+  }
+
+  nav ul.active {
+    display: flex;                /* يطلع إذا صارت active من JS */
+  }
+
+  nav a {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+/* ============================
+   DARK THEME + NAV + HAMBURGER
+   ============================ */
+
+/* لون زر الهامبرقر في الدارك مود */
+body.dark-theme .hamburger {
+  color: #F5EFEB;
+}
+
+/* خلفية المنيو في الدارك مود (الجوال) */
+body.dark-theme nav ul {
+  background-color: #1e2a38;
+}
+
+/* روابط المنيو بالدارك مود (لو مو مضافة من قبل) */
+body.dark-theme nav a {
+  color: #F5EFEB;
+}
+
+body.dark-theme nav a::after {
+  background-color: #F5EFEB;
+}
+
+/* ====================================================== */
+/*         SERVICES PAGE RESPONSIVE (MOBILE)            */
+/* ====================================================== */
+
+@media (max-width: 768px) {
+  .services-page {
+    padding: 0 20px 30px;  /* 👈 قللنا الـ padding */
+  }
+
+  .services-header {
+    flex-direction: column;  /* 👈 عمودي بدل أفقي */
+    gap: 15px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .services-title {
+    font-size: 1.5rem;  /* 👈 صغّرنا الخط */
+  }
+
+  .sort-box {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sort-box select {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  /* 👇 الكروت تصير عمودية واحدة تحت واحدة */
+  .services-grid {
+    grid-template-columns: 1fr;  /* 👈 عمود واحد بس */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .service-card {
+    max-width: 100%;
+  }
+
+  .service-card img {
+    height: 200px;  /* 👈 ارتفاع أقل للصور */
+  }
+}
+
+/* شاشات صغيرة جداً */
+@media (max-width: 480px) {
+  .services-page {
+    padding: 0 15px 20px;
+  }
+
+  .services-header {
+    padding: 15px;
+  }
+
+  .services-title {
+    font-size: 1.3rem;
+  }
+
+  .service-card img {
+    height: 180px;
+  }
+
+  .service-info h3 {
+    font-size: 1rem;
+  }
+
+  .service-info .desc {
+    font-size: 0.85rem;
+  }
+
+  .service-info .price {
+    font-size: 0.9rem;
+  }
 }
