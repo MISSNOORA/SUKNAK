@@ -15,23 +15,15 @@
   </head>
   <body>
     <!--HEADER -->
-   <header>
+  <header>
   <div class="top-header">
     <img src="images/Logo.png" alt="Website Logo" class="logo" />
     <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle" />
-
-    <!-- THEME -->
     <button id="themeToggle" class="theme-btn">Dark Theme</button>
-    <div class="hamburger">
-  <i class="fa-solid fa-bars"></i>
-</div>
   </div>
 
- 
-
-
-  <!--NAV BAR -->
-  <nav>
+  <!-- Navigation للابتوب فقط -->
+  <nav class="desktop-nav">
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="UserDashboard.html">User</a></li>
@@ -40,6 +32,18 @@
       <li><a href="AboutUs.html">About Us</a></li>
     </ul>
   </nav>
+
+  <!-- Select Menu للجوال فقط -->
+  <div class="mobile-nav">
+    <select id="mobileMenu" onchange="if(this.value) location = this.value;">
+      <option value="">☰ Menu</option>
+      <option value="index.html">Home</option>
+      <option value="UserDashboard.html">User</option>
+      <option value="Services.html">Services</option>
+      <option value="ProviderDashboard.html">Provider</option>
+      <option value="AboutUs.html">About Us</option>
+    </select>
+  </div>
 </header>
 
 
