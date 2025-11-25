@@ -104,75 +104,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Update clock every second
   updateClock();
   setInterval(updateClock, 1000);
+  
+  });
  
 
-  // Services Page Sorting
-  const servicesGrid = document.querySelector('.services-grid');
-  const sortSelect = document.getElementById('sort');
-  
-  if (servicesGrid && sortSelect) {
-    let serviceCards = Array.from(servicesGrid.querySelectorAll('.service-card'));
-    
-    // Get price from card
-    function getPrice(card) {
-      const priceText = card.querySelector('.price').textContent;
-      const priceMatch = priceText.match(/\d+/);
-      return priceMatch ? parseInt(priceMatch[0]) : 0;
-    }
-    
-    // Get service name
-    function getName(card) {
-      return card.querySelector('h3').textContent.trim();
-    }
-    
-    // Fisher-Yates shuffle algorithm
-    function shuffleArray(array) {
-      const shuffled = [...array];
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-      }
-      return shuffled;
-    }
-    
-    // Render cards to grid
-    function renderCards(cards) {
-      servicesGrid.innerHTML = '';
-      cards.forEach(card => servicesGrid.appendChild(card));
-    }
-    
-    // Display random order on page load
-    serviceCards = shuffleArray(serviceCards);
-    renderCards(serviceCards);
-    
-    // Sort on selection change
-    sortSelect.addEventListener('change', function() {
-      const sortValue = this.value;
-      let sortedCards = [...serviceCards];
-      
-      switch(sortValue) {
-        case 'low-high':
-          sortedCards.sort((a, b) => getPrice(a) - getPrice(b));
-          break;
-          
-        case 'high-low':
-          sortedCards.sort((a, b) => getPrice(b) - getPrice(a));
-          break;
-          
-        case 'a-z':
-          sortedCards.sort((a, b) => getName(a).localeCompare(getName(b)));
-          break;
-          
-        case 'z-a':
-          sortedCards.sort((a, b) => getName(b).localeCompare(getName(a)));
-          break;
-      }
-      
-      renderCards(sortedCards);
-      serviceCards = sortedCards;
-    });
-  }
-});
+ 
 // ==========================
 // UserDashboard-request page
 // ==========================
@@ -430,19 +366,18 @@ function validateJoinForm() {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+if (!localStorage.getItem("services")) {
+    const defaultServices = [
+        { name: "Home Cleaning", desc: "Deep cleaning for every corner of your home using safe products.", price: "150", photo: "images/homecleaning.jpg" },
+        { name: "Baby Sitting", desc: "Trusted babysitters ensuring your child's safety and comfort at home.", price: "120", photo: "images/babysitting.jpg" },
+        { name: "Garden Maintenance", desc: "Keep your garden green and tidy with our expert maintenance team.", price: "180", photo: "images/gardenmaintenance.jpg" },
+        { name: "Furniture Moving", desc: "Professional team to move and handle your furniture safely and efficiently.", price: "200", photo: "images/furnituremoving.jpg" },
+        { name: "Private Chef", desc: "Personal chef at your home offering delicious, customized meals.", price: "250", photo: "images/privatechef.jpg" },
+        { name: "Home Repair", desc: "Experienced technicians for all your home maintenance needs.", price: "220", photo: "images/technicianservice.jpg" }
+    ];
 
-    if (!localStorage.getItem("services")) {
-        const defaultServices = [
-            { name: "Home Cleaning", desc: "Professional cleaners", photo: "images/cleaning.jpg" },
-            { name: "Baby Sitting", desc: "Trusted babysitters", photo: "images/baby.jpg" },
-            { name: "Garden Maintenance", desc: "Expert gardeners", photo: "images/garden.jpg" },
-            { name: "Furniture Moving", desc: "Skilled movers", photo: "images/moving.jpg" },
-            { name: "Private Chef", desc: "Chef at home", photo: "images/chef.jpg" },
-            { name: "Home Repair", desc: "Professional repair services", photo: "images/repair.jpg" }
-        ];
-
-        localStorage.setItem("services", JSON.stringify(defaultServices));
-    }
+    localStorage.setItem("services", JSON.stringify(defaultServices));
+}
 
     loadServices();
 });
@@ -833,8 +768,91 @@ document.addEventListener("DOMContentLoaded", () => {
     if (addMemberBtn) addMemberBtn.addEventListener("click", addNewMember);
 
 });
+// ==========================
+// Load Services in Services.html (Public Page)
+// ==========================
 
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // تحميل الخدمات في صفحة Services.html
+    const publicServicesGrid = document.getElementById("public-services-grid");
+    const publicTemplate = document.getElementById("public-service-template");
+    
+    if (publicServicesGrid && publicTemplate) {
+        
+        // جلب الخدمات من localStorage
+        const services = JSON.parse(localStorage.getItem("services")) || [];
+        
+        // مسح المحتوى القديم
+        publicServicesGrid.innerHTML = "";
+        
+        // إضافة كل خدمة
+        services.forEach(service => {
+            const card = publicTemplate.content.cloneNode(true);
+            
+            card.querySelector("img").src = service.photo;
+            card.querySelector("img").alt = service.name;
+            card.querySelector(".service-name").textContent = service.name;
+            card.querySelector(".service-desc").textContent = service.desc;
+			card.querySelector(".price").textContent = `SAR ${service.price} / hour`;		            
+            publicServicesGrid.appendChild(card);
+        });
+    }
+    
+});
+// ==========================
+// Services Page Sorting
+// ==========================
 
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const servicesGrid = document.getElementById("public-services-grid");
+    const sortSelect = document.getElementById("sort");
+    
+    if (servicesGrid && sortSelect) {
+        
+        // Get price from card
+        function getPrice(card) {
+            const priceText = card.querySelector('.price').textContent;
+            const priceMatch = priceText.match(/\d+/);
+            return priceMatch ? parseInt(priceMatch[0]) : 0;
+        }
+        
+        // Get service name
+        function getName(card) {
+            return card.querySelector('.service-name').textContent.trim();
+        }
+        
+        // Sort on selection change
+        sortSelect.addEventListener('change', function() {
+            const sortValue = this.value;
+            let serviceCards = Array.from(servicesGrid.querySelectorAll('.service-card'));
+            
+            switch(sortValue) {
+                case 'low-high':
+                    serviceCards.sort((a, b) => getPrice(a) - getPrice(b));
+                    break;
+                    
+                case 'high-low':
+                    serviceCards.sort((a, b) => getPrice(b) - getPrice(a));
+                    break;
+                    
+                case 'a-z':
+                    serviceCards.sort((a, b) => getName(a).localeCompare(getName(b)));
+                    break;
+                    
+                case 'z-a':
+                    serviceCards.sort((a, b) => getName(b).localeCompare(getName(a)));
+                    break;
+            }
+            
+            // Clear and re-append
+            servicesGrid.innerHTML = '';
+            serviceCards.forEach(card => servicesGrid.appendChild(card));
+        });
+    }
+    
+});
 
 
 		
