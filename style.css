@@ -138,13 +138,138 @@ nav a.active::after {
 /*              RESPONSIVE NAVIGATION              */
 /* ====================================================== */
 
+/* Mobile Select Menu - مخفي افتراضياً */
+.mobile-nav {
+  display: none;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #C8D9E6;
+  border-top: 0.5px solid #F5EFEB;
+}
+
+.mobile-nav select {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2F4156;
+  background-color: #F5EFEB;
+  border: 2px solid #2F4156;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav select:hover {
+  background-color: #2F4156;
+  color: #F5EFEB;
+}
+
+.mobile-nav select:focus {
+  border-color: #2F4156;
+  box-shadow: 0 0 5px rgba(47, 65, 86, 0.3);
+}
+
+/* ============================================ */
+/*        DARK MODE للسلكت منيو           */
+/* ============================================ */
+
+body.dark-theme .mobile-nav {
+  background-color: #111827;
+  border-top: 0.5px solid #4b5a6a;
+}
+
+body.dark-theme .mobile-nav select {
+  background-color: #1b2430;
+  color: #F5EFEB;
+  border-color: #F5EFEB;
+}
+
+body.dark-theme .mobile-nav select:hover {
+  background-color: #F5EFEB;
+  color: #2F4156;
+}
+
+body.dark-theme .mobile-nav select:focus {
+  border-color: #C8D9E6;
+  box-shadow: 0 0 5px rgba(200, 217, 230, 0.5);
+}
+
+body.dark-theme .mobile-nav select option {
+  background-color: #1b2430;
+  color: #F5EFEB;
+}
+
+/* Desktop/Laptop - شاشات كبيرة */
+@media (min-width: 769px) {
+  .top-header {
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    padding: 15px 60px;
+  }
+  
+  .logo {
+    width: 80px;
+    height: 80px;
+    justify-self: start;
+  }
+  
+  .logoTitle {
+    width: 180px;
+    justify-self: center;
+    position: static;
+    transform: none;
+  }
+  
+  .theme-btn {
+    justify-self: end;
+  }
+  
+  /* اظهر القائمة العادية */
+  .desktop-nav {
+    display: block !important;
+  }
+  
+  nav.desktop-nav {
+    font-weight: 600;
+    width: 100%;
+    background-color: #C8D9E6;
+    padding: 5px 0;
+    border-top: 0.5px solid #F5EFEB;
+  }
+  
+  nav.desktop-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+    gap: 40px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* اخفي السلكت منيو */
+  .mobile-nav {
+    display: none !important;
+  }
+}
+
+/* Dark Theme للـ Desktop Nav */
+body.dark-theme nav.desktop-nav {
+  background-color: #111827;
+  border-top: 0.5px solid #4b5a6a;
+}
+
 /* Tablet and Mobile */
 @media (max-width: 768px) {
   .top-header {
     padding: 15px 20px;
     display: grid;
-    grid-template-columns: auto 1fr;  /* 👈 عمودين */
-    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
     gap: 15px;
     align-items: center;
   }
@@ -156,40 +281,28 @@ nav a.active::after {
   .theme-btn {
     font-size: 12px;
     padding: 6px 15px;
-    grid-column: 1;  /* 👈 العمود الأول (يسار) */
+    grid-column: 1;
     grid-row: 1;
-    justify-self: start;  /* 👈 يسار */
+    justify-self: start;
   }
   
   .logoTitle {
     width: 120px;
     position: static;
     transform: none;
-    grid-column: 2;  /* 👈 العمود الثاني (يمين) */
+    grid-column: 2;
     grid-row: 1;
-    justify-self: end;  /* 👈 يمين */
-  }
-  /* الهامبرقر على اليمين */
-  .hamburger {
-    display: block;
-    order: 3;
-    font-size: 28px;
-    color: #2F4156;
-    cursor: pointer;
-    margin-right: 0;
-  }
-}
-
-  nav ul {
-    flex-direction: column;     
-    gap: 12px;
-    padding: 10px 0;
+    justify-self: end;
   }
 
-  nav a {
-    width: 100%;                
-    text-align: center;
-    padding: 10px 0;
+  /* اخفي القائمة العادية */
+  .desktop-nav {
+    display: none !important;
+  }
+  
+  /* اظهر السلكت منيو */
+  .mobile-nav {
+    display: block !important;
   }
 }
 
@@ -197,29 +310,25 @@ nav a.active::after {
 @media (max-width: 480px) {
   .top-header {
     padding: 10px 15px;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    position: relative;
-    min-height: 70px;
-  }
-  
-  .logo {
-    width: 50px;
-    height: 50px;
+    gap: 8px;
   }
   
   .logoTitle {
     width: 100px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
   
   .theme-btn {
-    font-size: 12px;
+    font-size: 11px;
     padding: 6px 12px;
+  }
+  
+  .mobile-nav {
+    padding: 10px 15px;
+  }
+  
+  .mobile-nav select {
+    font-size: 15px;
+    padding: 10px 12px;
   }
 }
 /* Footer Section */
@@ -2470,74 +2579,6 @@ body.dark-theme .added-request-box {
     padding: 10px 15px;
     border-radius: 6px;
     z-index: 1000;
-}/* ============================
-   HAMBURGER MENU
-   ============================ */
-
-.hamburger {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #2F4156;
-}
-
-/* يظهر الهامبرقر في الشاشات الصغيرة فقط */
-@media (max-width: 768px) {
-  .top-header {
-    padding: 15px 20px;
-    gap: 15px;
-    position: relative; /* عشان الأيقونة تتثبت صح */
-  }
-
-  .hamburger {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 25px;
-    z-index: 1100;
-  }
-
-  nav ul {
-    display: none;                /* مخفي افتراضياً */
-    flex-direction: column;
-    background-color: #C8D9E6;
-    width: 100%;
-    padding: 15px 0;
-    margin-top: 10px;
-  }
-
-  nav ul.active {
-    display: flex;                /* يطلع إذا صارت active من JS */
-  }
-
-  nav a {
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;
-  }
-}
-
-/* ============================
-   DARK THEME + NAV + HAMBURGER
-   ============================ */
-
-/* لون زر الهامبرقر في الدارك مود */
-body.dark-theme .hamburger {
-  color: #F5EFEB;
-}
-
-/* خلفية المنيو في الدارك مود (الجوال) */
-body.dark-theme nav ul {
-  background-color: #1e2a38;
-}
-
-/* روابط المنيو بالدارك مود (لو مو مضافة من قبل) */
-body.dark-theme nav a {
-  color: #F5EFEB;
-}
-
-body.dark-theme nav a::after {
-  background-color: #F5EFEB;
 }
 
 /* ====================================================== */
