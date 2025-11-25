@@ -3,7 +3,12 @@
 	<head>
 	  <meta charset="UTF-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	  <title>Suknak</title>
+	  <title>Suknak - Services</title>
+	  
+	  <!-- CSS -->
+	  <link rel="stylesheet" href="style.css">
+	  <!-- Icons -->
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	</head>
 	<body>
 
@@ -12,15 +17,13 @@
 		<div class="top-header">
 		  <img src="images/Logo.png" alt="Website Logo" class="logo">
 		  <img src="images/LogoTitle.png" alt="Website Logo" class="logoTitle">
-		  <link rel="stylesheet" href="style.css">
-		  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-		
+		  
+		  <!-- THEME BUTTON -->
+		  <button id="themeToggle" class="theme-btn">Dark Theme</button>
 		</div>
-<div class="hamburger">
-    <i class="fa-solid fa-bars"></i>
-  </div>
-		<!--NAV BAR -->
-		<nav>
+
+		<!-- Navigation للابتوب فقط -->
+		<nav class="desktop-nav">
 		  <ul>
 			<li><a href="index.html">Home</a></li>
 			<li><a href="UserDashboard.html">User</a></li>
@@ -29,92 +32,101 @@
 			<li><a href="AboutUs.html">About Us</a></li>
 		  </ul>
 		</nav>
+
+		<!-- Select Menu للجوال فقط -->
+		<div class="mobile-nav">
+		  <select id="mobileMenu" onchange="if(this.value) location = this.value;">
+			<option value="">☰ Menu</option>
+			<option value="index.html">Home</option>
+			<option value="UserDashboard.html">User</option>
+			<option value="Services.html" selected>Services</option>
+			<option value="ProviderDashboard.html">Provider</option>
+			<option value="AboutUs.html">About Us</option>
+		  </select>
+		</div>
 	  </header>
-	  
-	  	  
 
+	  <main class="services-page">
 
-	<main class="services-page">
+		<section class="services-header">
+			<h2 class="services-title">Our Services</h2>
+			
+			<!--OUR SERVICES FILTER -->
+			<div class="sort-box">
+				<label for="sort">Sort by:</label>
+				<select id="sort" name="sort">
+					<option selected disabled>Select</option>
+					<optgroup label="Price">
+						<option value="low-high">Low to High</option>
+						<option value="high-low">High to Low</option>
+					</optgroup>
+					<optgroup label="Name">
+						<option value="a-z">A to Z</option>
+						<option value="z-a">Z to A</option>
+					</optgroup>
+				</select>
+			</div>
+		</section>
 
-    <section class="services-header">
-        <h2 class="services-title">Our Services</h2>
-		
-		<!--OUR SERVICES FILTER -->
-        <div class="sort-box">
-            <label for="sort">Sort by:</label>
-            <select id="sort" name="sort">
-                <option selected disabled>Select</option>
-                <optgroup label="Price">
-                    <option value="low-high">Low to High</option>
-                    <option value="high-low">High to Low</option>
-                </optgroup>
-                <optgroup label="Name">
-                    <option value="a-z">A to Z</option>
-                    <option value="z-a">Z to A</option>
-                </optgroup>
-            </select>
-        </div>
-    </section>
+		<!--OUR SERVICES -->
+		<section class="services-grid">
 
-    <!--OUR SERVIECS -->
-    <section class="services-grid">
+			<div class="service-card">
+				<img src="images/babysitting.jpg" alt="Baby Sitting">
+				<div class="service-info">
+					<h3>Baby Sitting</h3>
+					<p class="desc">Trusted babysitters ensuring your child's safety and comfort at home.</p>
+					<p class="price">SAR 120 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/babysitting.jpg" alt="Baby Sitting">
-            <div class="service-info">
-                <h3>Baby Sitting</h3>
-                <p class="desc">Trusted babysitters ensuring your child’s safety and comfort at home.</p>
-                <p class="price">SAR 120 / hour</p>
-            </div>
-        </div>
+			<div class="service-card">
+				<img src="images/furnituremoving.jpg" alt="Furniture Moving">
+				<div class="service-info">
+					<h3>Furniture Moving</h3>
+					<p class="desc">Professional team to move and handle your furniture safely and efficiently.</p>
+					<p class="price">SAR 200 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/furnituremoving.jpg" alt="Furniture Moving">
-            <div class="service-info">
-                <h3>Furniture Moving</h3>
-                <p class="desc">Professional team to move and handle your furniture safely and efficiently.</p>
-                <p class="price">SAR 200 / hour</p>
-            </div>
-        </div>
+			<div class="service-card">
+				<img src="images/gardenmaintenance.jpg" alt="Garden Maintenance">
+				<div class="service-info">
+					<h3>Garden Maintenance</h3>
+					<p class="desc">Keep your garden green and tidy with our expert maintenance team.</p>
+					<p class="price">SAR 180 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/gardenmaintenance.jpg" alt="Garden Maintenance">
-            <div class="service-info">
-                <h3>Garden Maintenance</h3>
-                <p class="desc">Keep your garden green and tidy with our expert maintenance team.</p>
-                <p class="price">SAR 180 / hour</p>
-            </div>
-        </div>
+			<div class="service-card">
+				<img src="images/homecleaning.jpg" alt="Home Cleaning">
+				<div class="service-info">
+					<h3>Home Cleaning</h3>
+					<p class="desc">Deep cleaning for every corner of your home using safe products.</p>
+					<p class="price">SAR 150 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/homecleaning.jpg" alt="Home Cleaning">
-            <div class="service-info">
-                <h3>Home Cleaning</h3>
-                <p class="desc">Deep cleaning for every corner of your home using safe products.</p>
-                <p class="price">SAR 150 / hour</p>
-            </div>
-        </div>
+			<div class="service-card">
+				<img src="images/privatechef.jpg" alt="Private Chef">
+				<div class="service-info">
+					<h3>Private Chef</h3>
+					<p class="desc">Personal chef at your home offering delicious, customized meals.</p>
+					<p class="price">SAR 250 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/privatechef.jpg" alt="Private Chef">
-            <div class="service-info">
-                <h3>Private Chef</h3>
-                <p class="desc">Personal chef at your home offering delicious, customized meals.</p>
-                <p class="price">SAR 250 / hour</p>
-            </div>
-        </div>
+			<div class="service-card">
+				<img src="images/technicianservice.jpg" alt="Technician Service">
+				<div class="service-info">
+					<h3>Technician Service</h3>
+					<p class="desc">Experienced technicians for all your home maintenance needs.</p>
+					<p class="price">SAR 220 / hour</p>
+				</div>
+			</div>
 
-        <div class="service-card">
-            <img src="images/technicianservice.jpg" alt="Technician Service">
-            <div class="service-info">
-                <h3>Technician Service</h3>
-                <p class="desc">Experienced technicians for all your home maintenance needs.</p>
-                <p class="price">SAR 220 / hour</p>
-            </div>
-        </div>
-
-    </section>
-	</main>
+		</section>
+	  </main>
 
 	  <!--FOOTER-->
 	  <footer>
@@ -134,13 +146,20 @@
 				<i class="fas fa-envelope"></i>
 				<span>Gmail</span>
 			  </a>
-			</div>
+		  </div>
+		</div>
+
+		<div class="footer-clock">
+		  <i class="fas fa-clock"></i>
+		  <span id="realTimeClock"></span>
 		</div>
 
 		<div class="footer-bottom">
 		  <p>© Copyright</p>
 		</div>
 	  </footer>
-<script src="scripts.js"></script>
+
+	  <!-- JS -->
+	  <script src="scripts.js"></script>
 	</body>
 </html>
