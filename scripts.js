@@ -231,9 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
       errors.push("Please select a service.");
 
     
-    if (worker.value === "")
-      errors.push("Please select a worker.");
-
+    
    
     if (description.value.trim().length < 100)
       errors.push("Description must be at least 100 characters.");
