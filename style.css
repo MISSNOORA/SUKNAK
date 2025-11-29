@@ -1,4 +1,5 @@
 /* colors ... Navy(darkBlue) = #2F4156   SkyBlue(LightBlue) = #C8D9E6   Beige = #F5EFEB*/
+	
 	* {
 	  margin: 0;
 	  padding: 0;
@@ -38,7 +39,7 @@
   height: 80px;
   object-fit: contain;
   flex-shrink: 0;
-  justify-self: start;  /* 👈 مهم */
+  justify-self: start;  
 }
 
 .logoTitle {
@@ -46,13 +47,13 @@
   height: auto;
   object-fit: contain;
   flex-shrink: 0;
-  justify-self: center;  /* 👈 مهم */
-  position: static;      /* 👈 ازلنا absolute */
-  transform: none;       /* 👈 ازلنا transform */
+  justify-self: center;  
+  position: static;      
+  transform: none;       
 }
 
 .theme-btn {
-  justify-self: end;  /* 👈 مهم */
+  justify-self: end;  
 }
 
 /* Theme Button */
@@ -140,7 +141,7 @@ nav a.active::after {
    ==================================== */
 
 .mobile-nav-select {
-  display: none; /* مخفي في الديسكتوب */
+  display: none; 
   width: 100%;
   max-width: 200px;
   padding: 8px 12px;
@@ -159,7 +160,7 @@ nav a.active::after {
   border-color: #50657C;
 }
 
-/* DESKTOP NAV - يظهر في الديسكتوب فقط */
+
 .desktop-nav {
   display: block;
 }
@@ -170,15 +171,15 @@ nav a.active::after {
 
 @media (max-width: 768px) {
   
-  /* إخفاء النافبار العادي */
+ 
   .desktop-nav {
     display: none !important;
   }
   
-  /* إظهار السلكت منيو */
+  
   .mobile-nav-select {
     display: block;
-    grid-column: 1 / -1; /* ياخذ كامل العرض */
+    grid-column: 1 / -1; 
     grid-row: 2;
     justify-self: center;
     margin-top: 10px;
@@ -626,8 +627,8 @@ body.dark-theme .mobile-nav-select option {
 
   /* Make the fieldset scroll vertically */
   .provider-Staff-box {
-    max-height: 500px;     /* يظهر 3 كروت */
-    overflow-y: auto;      /* سكرول عمودي */
+    max-height: 500px;     
+    overflow-y: auto;      
     padding-right: 10px;
   }
 
@@ -2480,18 +2481,18 @@ body.dark-theme .added-request-box {
 
 @media (max-width: 768px) {
   .services-page {
-    padding: 0 20px 30px;  /* 👈 قللنا الـ padding */
+    padding: 0 20px 30px;  
   }
 
   .services-header {
-    flex-direction: column;  /* 👈 عمودي بدل أفقي */
+    flex-direction: column; 
     gap: 15px;
     padding: 20px;
     text-align: center;
   }
 
   .services-title {
-    font-size: 1.5rem;  /* 👈 صغّرنا الخط */
+    font-size: 1.5rem;  
   }
 
   .sort-box {
@@ -2504,9 +2505,9 @@ body.dark-theme .added-request-box {
     max-width: 250px;
   }
 
-  /* 👇 الكروت تصير عمودية واحدة تحت واحدة */
+  
   .services-grid {
-    grid-template-columns: 1fr;  /* 👈 عمود واحد بس */
+    grid-template-columns: 1fr;  
     gap: 20px;
     padding: 0 10px;
   }
@@ -2516,11 +2517,11 @@ body.dark-theme .added-request-box {
   }
 
   .service-card img {
-    height: 200px;  /* 👈 ارتفاع أقل للصور */
+    height: 200px;  
   }
 }
 
-/* شاشات صغيرة جداً */
+
 @media (max-width: 480px) {
   .services-page {
     padding: 0 15px 20px;
@@ -2550,3 +2551,20 @@ body.dark-theme .added-request-box {
     font-size: 0.9rem;
   }
 }
+
+/* ========= Profile pages: horizontal scroll on mobile ========= */
+
+@media (max-width: 768px) {
+  .profile-card {
+    max-width: 100%;
+    margin: 10px 8px;
+    padding: 12px;
+    overflow-x: auto;              
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .profile-matrix {
+    min-width: 700px;             
+  }
+}
+  
