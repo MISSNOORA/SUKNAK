@@ -660,181 +660,224 @@ if (addMemberBtn) {
 
 
 
-// =======================================================
-// Provider dashboard
-// =======================================================
+// ============================
+// ProviderDashboard - LOADING SERVICES
+// ============================
 
-// Load Services 
+// NO DEFAULT SERVICES — first visit = empty list
+document.addEventListener("DOMContentLoaded", () => {
+  loadServices();
+});
+
+// Load Services (clean version)
 function loadServices() {
-    let services = JSON.parse(localStorage.getItem("services")) || [];
-	services = services.filter(s => s.desc !== undefined && s.photo !== undefined);
+  const services = JSON.parse(localStorage.getItem("services")) || [];
+  const container = document.getElementById("services-container");
+  const template = document.getElementById("service-template");
 
-    const container = document.getElementById("services-container");
-    const template = document.getElementById("service-template");
+  if (!container || !template) return;
 
-    if (!container || !template) return;
+  container.innerHTML = "";
 
-    container.innerHTML = "";
+  services.forEach(service => {
+      const card = template.content.cloneNode(true);
 
-    services.forEach(service => {
-        const card = template.content.cloneNode(true);
+      card.querySelector(".service-img").src = service.photo;
+      card.querySelector(".service-title").textContent = service.name;
+      card.querySelector(".service-description").textContent = service.desc;
 
-        card.querySelector(".service-img").src = service.photo;
-        card.querySelector(".service-title").textContent = service.name;
-        card.querySelector(".service-description").textContent = service.desc;
-
-        container.appendChild(card);
-    });
+      container.appendChild(card);
+  });
 }
 
+// ============================
+// ProviderDashboard - ADDING SERVICES
+// ============================
 
-// Load Staff Members 
-function loadStaffMembers() {
-    const staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
-    const container = document.getElementById("staff-container");
-    const template = document.getElementById("staff-template");
+const addServiceForm = document.getElementById("addServiceForm");
 
-    if (!container || !template) return;
+if (addServiceForm) {
+  addServiceForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-    container.innerHTML = "";
+      const name = document.getElementById("serviceName").value.trim();
+      const price = document.getElementById("servicePrice").value.trim();
+      const desc = document.getElementById("serviceDescription").value.trim();
+      const photoInput = document.getElementById("servicePhoto");
 
-    staffList.forEach(member => {
-        const card = template.content.cloneNode(true);
+      if (!name || !price || !desc || !photoInput.files.length) {
+          alert("Please fill in all fields.");
+          return;
+      }
+      if (!isNaN(name.charAt(0))) {
+          alert("Service name cannot start with a number.");
+          return;
+      }
+      if (isNaN(price) || Number(price) <= 0) {
+          alert("Price must be a valid number.");
+          return;
+      }
 
-        card.querySelector(".staff-photo").src = member.photo;
-        card.querySelector(".staff-photo").alt = member.name;
-        card.querySelector(".staff-name").textContent = member.name;
-        card.querySelector(".staff-job").textContent = member.job;
-        card.querySelector(".staff-checkbox").value = member.name;
+      const photo = "images/" + photoInput.files[0].name;
 
-        container.appendChild(card);
-    });
+      const newService = {
+          name: name,
+          price: price,
+          desc: desc,
+          photo: photo
+      };
+      
+      let services = JSON.parse(localStorage.getItem("services")) || [];
+      services.push(newService);
+
+      localStorage.setItem("services", JSON.stringify(services));
+      alert(`Added Successfully: ${name}`);
+
+      addServiceForm.reset();
+  });
 }
 
-
-// Delete Selected Staff
-function deleteSelectedStaff() {
-    const checkboxes = document.querySelectorAll(".staff-checkbox:checked");
-
-    if (checkboxes.length === 0) {
-        alert("Please select at least one member");
-        return;
-    }
-
-    if (!confirm("Are you sure you want to delete selected member(s)?")) {
-        return;
-    }
-
-    let staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
-    const selectedNames = Array.from(checkboxes).map(cb => cb.value);
-
-    staffList = staffList.filter(member => !selectedNames.includes(member.name));
-
-    localStorage.setItem("staffMembers", JSON.stringify(staffList));
-    loadStaffMembers();
-
-    alert("Selected members deleted successfully!");
-}
-
-
-// Add New Staff Member 
-function addNewMember() {
-
-    const nameInput = document.getElementById("FullName");
-    const emailInput = document.getElementById("email");
-    const dobInput = document.getElementById("dob");
-    const expertiseInput = document.getElementById("expertise");
-    const skillsInput = document.getElementById("skills");
-    const educationInput = document.getElementById("education");
-    const photoInput = document.getElementById("photo");
-    const messageInput = document.getElementById("message");
-
-    if (
-        !nameInput.value.trim() ||
-        !emailInput.value.trim() ||
-        !dobInput.value.trim() ||
-        !expertiseInput.value.trim() ||
-        !skillsInput.value.trim() ||
-        !educationInput.value.trim()
-    ) {
-        alert("Please fill in all required fields.");
-        return;
-    }
-
-    if (!isNaN(nameInput.value.trim().charAt(0))) {
-        alert("Full Name cannot start with a number.");
-        return;
-    }
-
-    let photoPath = "images/profile.jpeg";
-
-    if (photoInput.files.length > 0) {
-        photoPath = "images/Staff1/" + photoInput.files[0].name;
-    }
-
-    const newMember = {
-        name: nameInput.value.trim(),
-        job: expertiseInput.value.trim(),
-        photo: photoPath
-    };
-
-    let staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
-    staffList.push(newMember);
-    localStorage.setItem("staffMembers", JSON.stringify(staffList));
-
-    loadStaffMembers();
-
-    alert(`${newMember.name} has been added successfully!`);
-
-    nameInput.value = "";
-    emailInput.value = "";
-    dobInput.value = "";
-    expertiseInput.value = "";
-    skillsInput.value = "";
-    educationInput.value = "";
-    photoInput.value = "";
-    messageInput.value = "";
-}
-
+// ============================
+// ProviderDashboard - LOADING STAFF MEMBERS (unchanged)
+// ============================
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  if (!localStorage.getItem("staffMembers")) {
+      const defaultStaff = [
+          { name: "Omar",  job: "Home Cleaning", photo: "images/Staff/clean1.png" },
+          { name: "Sara",  job: "Baby Sitting", photo: "images/Staff/Baby-1.png" },
+          { name: "Lina",  job: "Home Cleaning", photo: "images/Staff1/clean2.png" },
+          { name: "Noor",  job: "Baby Sitting", photo: "images/Staff/babysitting2.png" },
+          { name: "Faisal", job: "Garden Maintenance", photo: "images/Staff/Garden-1.png" },
+          { name: "Hana",  job: "Garden Maintenance", photo: "images/Staff1/garden2.png" },
+          { name: "Khalid", job: "Furniture Moving", photo: "images/Staff/Moving-1.png" },
+          { name: "Rayan", job: "Furniture Moving", photo: "images/Staff1/moving2.png" },
+          { name: "Youssef", job: "Private Chef", photo: "images/Staff/Chef-1.png" },
+          { name: "Maha",   job: "Private Chef", photo: "images/Staff1/chef2.png" },
+          { name: "Ali",    job: "Home Repair", photo: "images/Staff/Repair-1.png" },
+          { name: "Fatimah", job: "Home Repair", photo: "images/Staff1/repair2.png" }
+      ];
 
-	loadServices();
+      localStorage.setItem("staffMembers", JSON.stringify(defaultStaff));
+  }
 
+  loadStaffMembers();
 
+  const deleteBtn = document.querySelector(".delete-btn");
+  if (deleteBtn) deleteBtn.addEventListener("click", deleteSelectedStaff);
 
-    if (!localStorage.getItem("staffMembers")) {
-        const defaultStaff = [
-            { name: "Omar", job: "Home Cleaning", photo: "images/Staff/clean1.png" },
-            { name: "Sara", job: "Baby Sitting", photo: "images/Staff/Baby-1.png" },
-            { name: "Lina", job: "Home Cleaning", photo: "images/Staff1/clean2.png" },
-            { name: "Noor", job: "Baby Sitting", photo: "images/Staff1/babysitting2.png" },
-            { name: "Faisal", job: "Garden Maintenance", photo: "images/Staff/Garden-1.png" },
-            { name: "Hana", job: "Garden Maintenance", photo: "images/Staff1/garden2.png" },
-            { name: "Khalid", job: "Furniture Moving", photo: "images/Staff/Moving-1.png" },
-            { name: "Rayan", job: "Furniture Moving", photo: "images/Staff1/moving2.png" },
-            { name: "Youssef", job: "Private Chef", photo: "images/Staff/Chef-1.png" },
-            { name: "Maha", job: "Private Chef", photo: "images/Staff1/chef2.png" },
-            { name: "Ali", job: "Home Repair", photo: "images/Staff/Repair-1.png" },
-            { name: "Fatimah", job: "Home Repair", photo: "images/Staff1/repair2.png" }
-        ];
-
-        localStorage.setItem("staffMembers", JSON.stringify(defaultStaff));
-    }
-
-    loadStaffMembers();
-
-
-    const deleteBtn = document.querySelector(".delete-btn");
-    if (deleteBtn) deleteBtn.addEventListener("click", deleteSelectedStaff);
-
-    const addMemberBtn = document.getElementById("addMemberBtn");
-    if (addMemberBtn) addMemberBtn.addEventListener("click", addNewMember);
+  const addMemberBtn = document.getElementById("addMemberBtn");
+  if (addMemberBtn) addMemberBtn.addEventListener("click", addNewMember);
 
 });
 
+// Load Staff Members (keep as it is)
+function loadStaffMembers() {
+  const staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
+  const container = document.getElementById("staff-container");
+  const template = document.getElementById("staff-template");
 
+  if (!container || !template) return;
+
+  container.innerHTML = ""; 
+
+  staffList.forEach(member => {
+      const card = template.content.cloneNode(true);
+
+      card.querySelector(".staff-photo").src = member.photo;
+      card.querySelector(".staff-photo").alt = member.name;
+      card.querySelector(".staff-name").textContent = member.name;
+      card.querySelector(".staff-job").textContent = member.job;
+      card.querySelector(".staff-checkbox").value = member.name;
+
+      container.appendChild(card);
+  });
+}
+
+// Delete Selected Staff
+function deleteSelectedStaff() {
+  const checkboxes = document.querySelectorAll(".staff-checkbox:checked");
+
+  if (checkboxes.length === 0) {
+      alert("Please select at least one member");
+      return;
+  }
+
+  if (!confirm("Are you sure you want to delete selected member(s)?")) {
+      return;
+  }
+
+  let staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
+  const selectedNames = Array.from(checkboxes).map(cb => cb.value);
+
+  staffList = staffList.filter(member => !selectedNames.includes(member.name));
+
+  localStorage.setItem("staffMembers", JSON.stringify(staffList));
+  loadStaffMembers();
+
+  alert("Selected members deleted successfully!");
+}
+
+// Add New Staff Member
+function addNewMember() {
+
+  const nameInput = document.getElementById("FullName");
+  const emailInput = document.getElementById("email");
+  const dobInput = document.getElementById("dob");
+  const expertiseInput = document.getElementById("expertise");
+  const skillsInput = document.getElementById("skills");
+  const educationInput = document.getElementById("education");
+  const photoInput = document.getElementById("photo");
+  const messageInput = document.getElementById("message");
+
+  if (
+      !nameInput.value.trim() ||
+      !emailInput.value.trim() ||
+      !dobInput.value.trim() ||
+      !expertiseInput.value.trim() ||
+      !skillsInput.value.trim() ||
+      !educationInput.value.trim()
+  ) {
+      alert("Please fill in all required fields.");
+      return;
+  }
+
+  if (!isNaN(nameInput.value.trim().charAt(0))) {
+      alert("Full Name cannot start with a number.");
+      return;
+  }
+
+  let photoPath = "images/profile.jpeg";
+
+  if (photoInput.files.length > 0) {
+      photoPath = "images/Staff1/" + photoInput.files[0].name;
+  }
+
+  const newMember = {
+      name: nameInput.value.trim(),
+      job: expertiseInput.value.trim(),
+      photo: photoPath
+  };
+
+  let staffList = JSON.parse(localStorage.getItem("staffMembers")) || [];
+  staffList.push(newMember);
+
+  localStorage.setItem("staffMembers", JSON.stringify(staffList));
+
+  loadStaffMembers();
+
+  alert(`${newMember.name} has been added successfully!`);
+
+  nameInput.value = "";
+  emailInput.value = "";
+  dobInput.value = "";
+  expertiseInput.value = "";
+  skillsInput.value = "";
+  educationInput.value = "";
+  photoInput.value = "";
+  messageInput.value = "";
+}
 
 
 		
