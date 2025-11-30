@@ -666,7 +666,9 @@ if (addMemberBtn) {
 
 // Load Services 
 function loadServices() {
-    const services = JSON.parse(localStorage.getItem("services")) || [];
+    let services = JSON.parse(localStorage.getItem("services")) || [];
+	services = services.filter(s => s.desc !== undefined && s.photo !== undefined);
+
     const container = document.getElementById("services-container");
     const template = document.getElementById("service-template");
 
